@@ -36,5 +36,6 @@ module.exports = {
         });
       }
     }
-  }
+  },
+  plugings: [{ src: "~plugins/drift.js", mode: "client" }]
 };

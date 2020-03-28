@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="snap">
     <section class="hero is-transparent is-fullheight is-first-hero">
       <div class="hero-overlay"></div>
       <div class="hero-body">
@@ -47,13 +47,13 @@
           <div class="columns">
             <div class="column is-4">
               <h1 class="title">
-                {{ indexData.howToTitle }}
+                {{ indexData.integrateTitle }}
               </h1>
               <p class="has-margin-bottom">
-                {{ indexData.howToText }}
+                {{ indexData.integrateText }}
               </p>
               <button class="button is-primary is-large is-fullwidth">
-                {{ indexData.howToCallToAction }}
+                {{ indexData.integrateCallToAction }}
               </button>
             </div>
           </div>
@@ -116,7 +116,13 @@ h2 {
 p {
   color: white;
 }
+.hero {
+  scroll-snap-align: start;
+}
 .has-margin-bottom {
   margin-bottom: 24px;
+}
+.snap {
+  scroll-snap-type: y proximity;
 }
 </style>

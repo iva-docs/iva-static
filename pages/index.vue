@@ -1,60 +1,31 @@
 <template>
   <div class="snap">
-    <section class="hero is-transparent is-fullheight is-first-hero">
+    <section
+      v-for="h in heroes"
+      :key="h.title"
+      class="hero is-transparent is-fullheight"
+      :style="`background-image: url(${h.background.fields.file.url});`"
+    >
       <div class="hero-overlay"></div>
       <div class="hero-body">
         <div class="container">
           <div class="columns">
             <div class="column is-4">
               <h1 class="title">
-                {{ indexData.heroTitle }}
+                {{ h.title }}
               </h1>
-              <h2 class="subtitle">
-                {{ indexData.heroSubtitle }}
+              <h2 class="subtitle" v-if="h.subtitle && h.subtitle.length > 0">
+                {{ h.subtitle }}
               </h2>
-              <button class="button is-primary is-large is-fullwidth">
-                {{ indexData.heroCallToAction }}
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="hero is-transparent is-fullheight is-second-hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-body">
-        <div class="container">
-          <div class="columns">
-            <div class="column is-offset-8 is-4">
-              <h1 class="title">
-                {{ indexData.howToTitle }}
-              </h1>
-              <p class="has-margin-bottom">
-                {{ indexData.howToText }}
+              <p class="has-margin-bottom" v-if="h.text && h.text.length > 0">
+                {{ h.text }}
               </p>
-              <button class="button is-primary is-large is-fullwidth">
-                {{ indexData.howToCallToAction }}
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="hero is-transparent is-fullheight is-third-hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-body">
-        <div class="container">
-          <div class="columns">
-            <div class="column is-4">
-              <h1 class="title">
-                {{ indexData.integrateTitle }}
-              </h1>
-              <p class="has-margin-bottom">
-                {{ indexData.integrateText }}
-              </p>
-              <button class="button is-primary is-large is-fullwidth">
-                {{ indexData.integrateCallToAction }}
-              </button>
+              <a
+                href="/catalog"
+                class="button is-primary is-large is-fullwidth"
+              >
+                {{ h.callToAction }}
+              </a>
             </div>
           </div>
         </div>
@@ -68,7 +39,8 @@ import Contentful from "../plugins/contentful.js";
 export default {
   data() {
     return {
-      indexData: {}
+      indexData: {},
+      heroes: []
     };
   },
   async mounted() {
@@ -77,23 +49,18 @@ export default {
       content_type: process.env.CTF_INDEX_ID
     });
     this.indexData = res.items[0].fields;
+    const resHeroes = await client.getEntries({
+      content_type: process.env.CTF_INDEX_HERO_ID
+    });
+    this.heroes = resHeroes.items
+      .map(e => e.fields)
+      .sort((a, b) => (a.order > b.order ? 1 : -1));
   }
 };
 </script>
 
 <style scoped>
-.is-first-hero {
-  background-image: url("/images/hero-background.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.is-second-hero {
-  background-image: url("/images/hero2-background.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.is-third-hero {
-  background-image: url("/images/hero3-background.jpg");
+.hero.is-transparent.is-fullheight {
   background-size: cover;
   background-position: center;
 }

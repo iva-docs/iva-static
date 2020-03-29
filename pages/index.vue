@@ -9,8 +9,10 @@
       <div class="hero-overlay"></div>
       <div class="hero-body">
         <div class="container">
-          <div class="columns">
-            <div class="column is-4">
+          <div class="columns" v-if="h.hasPricing !== true">
+            <div
+              :class="`column is-4 ${h.order % 2 === 0 ? 'is-offset-8' : ''}`"
+            >
               <h1 class="title">
                 {{ h.title }}
               </h1>
@@ -28,6 +30,17 @@
               </a>
             </div>
           </div>
+          <div class="columns" v-else>
+            <div class="column is-4" v-for="p in prices" :key="p.name">
+              <pricing-card
+                :name="p.name"
+                :price="p.price"
+                :isFeatured="p.isFeatured"
+                :featuredText="p.featuredText"
+                :features="p.features"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -36,25 +49,33 @@
 
 <script>
 import Contentful from "../plugins/contentful.js";
+import PricingCard from "../components/Billing/PricingCard.vue";
 export default {
   data() {
     return {
-      indexData: {},
-      heroes: []
+      heroes: [],
+      prices: []
     };
   },
   async mounted() {
     const client = Contentful.createClient();
-    const res = await client.getEntries({
-      content_type: process.env.CTF_INDEX_ID
-    });
-    this.indexData = res.items[0].fields;
     const resHeroes = await client.getEntries({
       content_type: process.env.CTF_INDEX_HERO_ID
     });
     this.heroes = resHeroes.items
       .map(e => e.fields)
       .sort((a, b) => (a.order > b.order ? 1 : -1));
+    if (this.heroes.find(e => e.hasPricing === true)) {
+      const resPricing = await client.getEntries({
+        content_type: process.env.CTF_PRICING_ID
+      });
+      this.prices = resPricing.items
+        .map(e => e.fields)
+        .sort((a, b) => (a.order > b.order ? 1 : -1));
+    }
+  },
+  components: {
+    PricingCard
   }
 };
 </script>
@@ -83,13 +104,11 @@ h2 {
 p {
   color: white;
 }
-.hero {
-  scroll-snap-align: start;
-}
 .has-margin-bottom {
   margin-bottom: 24px;
 }
-.snap {
-  scroll-snap-type: y proximity;
+a:hover {
+  transform: scale(1.08);
+  transition: 200ms transform ease-in-out;
 }
 </style>

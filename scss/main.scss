@@ -1,2 +1,7 @@
 @import "./colors.scss";
 @import "../node_modules/bulma/bulma.sass";
+
+html,
+body {
+    background-color: black;
+}

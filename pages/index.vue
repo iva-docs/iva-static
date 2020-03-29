@@ -22,15 +22,15 @@
               <p class="has-margin-bottom" v-if="h.text && h.text.length > 0">
                 {{ h.text }}
               </p>
-              <a
-                href="/catalog"
-                class="button is-primary is-large is-fullwidth"
-              >
+              <a :href="h.href" class="button is-primary is-large is-fullwidth">
                 {{ h.callToAction }}
               </a>
             </div>
           </div>
-          <div class="columns" v-else>
+          <div class="columns is-multiline content" v-else>
+            <div class="column is-12">
+              <h1>Pricing</h1>
+            </div>
             <div class="column is-4" v-for="p in prices" :key="p.name">
               <pricing-card
                 :name="p.name"

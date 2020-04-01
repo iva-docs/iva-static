@@ -12,7 +12,12 @@ module.exports = {
       { hid: "description", name: "description", content: "Nuxt.js project" }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-    script: [{ src: "/drift.js" }]
+    script: [
+      { src: "/drift.js" },
+      { src: "/optimize-img.js" },
+      { src: "https://cdn.iubenda.com/cs/iubenda_cs.js" },
+      { src: "ibuenda.js" }
+    ]
   },
   /*
    ** Customize the progress bar color
@@ -22,7 +27,7 @@ module.exports = {
   /*
    ** Build configuration
    */
-
+  mode: "spa",
   build: {
     /*
      ** Run ESLint on save

@@ -212,6 +212,7 @@ export default {
   margin-bottom: 24px;
 }
 .snap {
+  scroll-behavior: smooth;
   background-color: transparent;
   background-size: cover;
   background-position: center;
@@ -237,8 +238,5 @@ a:hover {
 .has-text-white .title,
 .has-text-white .subtitle {
   color: white;
-}
-.snap {
-  scroll-behavior: smooth;
 }
 </style>

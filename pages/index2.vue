@@ -1,16 +1,20 @@
 <template>
   <div class="snap">
-    <div class="overlay"></div>
     <section
       v-for="h in heroes"
       :id="h.title"
       :key="h.title"
       class="hero is-transparent is-fullheight"
     >
+      <!-- <div class="hero-overlay"></div> -->
       <div class="hero-body">
         <div class="container">
-          <div class="columns">
-            <div class="column box is-4">
+          <div class="columns" v-if="h.hasPricing !== true">
+            <div
+              :class="`column box ${h.background ? 'is-4' : 'is-12'} ${
+                h.order % 2 === 0 && h.background ? 'is-offset-8' : ''
+              }`"
+            >
               <h1 class="title">
                 {{ h.title }}
               </h1>
@@ -25,64 +29,23 @@
               </a>
             </div>
           </div>
-        </div>
-      </div>
-      <div
-        class="hero is-fullheight is-hidden-desktop-only is-hidden-widescreen-only is-hidden-tablet-only"
-      >
-        <div class="hero-body">
-          <div class="container">
-            <div class="columns">
-              <div class="column is-8 is-offset-4">
-                <div class="box content">
-                  <h1>Im serious</h1>
-                </div>
-              </div>
+          <div class="columns is-multiline content" v-else>
+            <div class="column is-12">
+              <h1>Pricing</h1>
+            </div>
+            <div class="column is-4" v-for="p in prices" :key="p.name">
+              <pricing-card
+                :name="p.name"
+                :price="p.price"
+                :isFeatured="p.isFeatured"
+                :featuredText="p.featuredText"
+                :features="p.features"
+              />
             </div>
           </div>
         </div>
       </div>
     </section>
-    <div class="hero is-fixed is-fullheight is-hidden-mobile">
-      <div class="hero-body">
-        <div class="container">
-          <div class="columns">
-            <div class="column is-8 is-offset-4">
-              <div
-                :class="`box content ${
-                  (selected.text && selected.text.length > 0) ||
-                  selected.hasPricing === true
-                    ? 'is-visible-box'
-                    : 'is-invisible-box'
-                }`"
-              >
-                <h1 v-if="selected.hasPricing !== true">
-                  {{ selected.title }}
-                </h1>
-                <p
-                  class="has-margin-bottom"
-                  v-if="selected.hasPricing !== true"
-                >
-                  {{ selected.text }}
-                </p>
-
-                <div class="columns is-multiline content has-text-left" v-else>
-                  <div class="column is-12" v-for="p in prices" :key="p.name">
-                    <h3>
-                      {{ p.name }} {{ p.price && p.price > 0 ? p.price : ""
-                      }}{{ p.price && p.price > 0 ? "$ per Month" : "" }}
-                    </h3>
-                    <ul>
-                      <li v-for="f in p.features" :key="name + f">{{ f }}</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <footer-comp />
   </div>
 </template>
@@ -96,9 +59,8 @@ export default {
     return {
       heroes: [],
       prices: [],
-      selected: {},
       viewHeight: Math.max(
-        document.documentElement ? document.documentElement.clientHeight : 0,
+        document.documentElement.clientHeight,
         window.innerHeight || 0
       ),
     };
@@ -132,8 +94,11 @@ export default {
       var elementHeight = element.clientHeight;
       var elementPosition =
         element.getBoundingClientRect().top + scrollY + elementHeight;
-      if (scrollPosition > elementPosition) {
-        this.selected = this.heroes.find((e) => e.title === id);
+      if (
+        scrollPosition > elementPosition &&
+        scrollPosition < elementPosition - elementHeight
+      ) {
+        console.log(id);
         return true;
       }
       return false;
@@ -153,48 +118,29 @@ export default {
   background-position: center;
   background-attachment: fixed;
 }
-.is-fixed {
-  position: fixed;
-  top: 0px;
-  width: 100%;
-}
-.is-fixed .box {
-  min-height: 70vh;
-  text-align: center;
-}
-.overlay {
+.hero-overlay {
   background-color: black;
   opacity: 0.6;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  position: fixed;
+  margin-bottom: -100vh;
 }
+/* h1 {
+  color: white;
+}
+h2 {
+  color: white;
+}
+p {
+  color: white;
+} */
 .has-margin-bottom {
   margin-bottom: 24px;
-}
-.snap {
-  background-color: transparent;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-image: url("/images/hero1-background.jpg");
 }
 a:hover {
   transform: scale(1.04);
   transition: 200ms transform ease-in-out;
-}
-.box {
-  opacity: 1;
-  padding: 24px;
-}
-.box.is-visible-box {
-  opacity: 1;
-  transition: opacity 300ms ease-out;
-}
-.box.is-invisible-box {
-  opacity: 0;
-  transition: opacity 300ms ease-in;
 }
 </style>

@@ -61,12 +61,15 @@
               <p class="has-margin-bottom" v-if="h.text && h.text.length > 0">
                 {{ h.text }}
               </p>
-              <a :href="h.href" class="button is-primary is-large is-fullwidth">
+              <a
+                :href="h.href"
+                class="button is-primary is-large is-fullwidth is-hidden-mobile"
+              >
                 {{ h.callToAction }}
               </a>
             </div>
             <div
-              class="column is-8 is-hidden-desktop-only is-hidden-widescreen-only is-hidden-tablet-only"
+              class="column is-8 is-hidden-tablet"
               v-if="(h.text && h.text.length > 0) || h.hasPricing === true"
             >
               <div :class="`box content`">
@@ -93,6 +96,12 @@
                   </div>
                 </div>
               </div>
+              <a
+                :href="h.href"
+                class="button is-primary is-large is-fullwidth is-hidden-tablet"
+              >
+                {{ h.callToAction }}
+              </a>
             </div>
           </div>
         </div>

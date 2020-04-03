@@ -27,6 +27,15 @@
         <a class="navbar-item" href="/#pricing">
           Pricing
         </a>
+
+        <a
+          class="navbar-item is-primary"
+          href="https://app.iva-docs.com/auth/register"
+        >
+          <button class="button is-primary">
+            Login
+          </button>
+        </a>
       </div>
     </div>
   </nav>

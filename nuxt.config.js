@@ -5,11 +5,16 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: "iva-static",
+    title: "Let Iva do it for you",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "Nuxt.js project" },
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "Let Iva do it - Iva is a document generator that integrates with all your work tools",
+      },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     script: [

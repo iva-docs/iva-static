@@ -20,7 +20,7 @@
                 <div
                   class="has-margin-bottom has-text-left"
                   v-if="selected.hasPricing !== true"
-                  v-html="markdown"
+                  v-html="markdown(selected)"
                 />
 
                 <div class="columns is-multiline content has-text-left" v-else>
@@ -46,7 +46,7 @@
       v-for="h in heroes"
       :id="h.ancher"
       :key="h.title"
-      class="hero is-transparent is-fullheight"
+      class="hero is-fullheight"
     >
       <div class="hero-body">
         <div class="container">
@@ -65,48 +65,31 @@
                 {{ h.callToAction }}
               </a>
             </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="hero is-fullheight is-hidden-desktop-only is-hidden-widescreen-only is-hidden-tablet-only"
-      >
-        <div class="hero-body">
-          <div class="container">
-            <div class="columns">
-              <div class="column is-8 is-offset-4">
+            <div
+              class="column is-8 is-hidden-desktop-only is-hidden-widescreen-only is-hidden-tablet-only"
+              v-if="(h.text && h.text.length > 0) || h.hasPricing === true"
+            >
+              <div :class="`box content`">
+                <h1 v-if="h.hasPricing !== true">
+                  {{ h.titleExtended }}
+                </h1>
                 <div
-                  :class="`box content ${
-                    (selected.text && selected.text.length > 0) ||
-                    selected.hasPricing === true
-                      ? 'is-visible-box'
-                      : 'is-invisible-box'
-                  }`"
-                >
-                  <h1 v-if="selected.hasPricing !== true">
-                    {{ selected.title }}
-                  </h1>
-                  <div
-                    class="has-margin-bottom"
-                    v-if="selected.hasPricing !== true"
-                    v-html="markdown"
-                  />
+                  class="has-margin-bottom has-text-left"
+                  v-if="h.hasPricing !== true"
+                  v-html="markdown(h)"
+                />
 
-                  <div
-                    class="columns is-multiline content has-text-left"
-                    v-else
-                  >
-                    <div class="column is-12" v-for="p in prices" :key="p.name">
-                      <h3>
-                        {{ p.name }} {{ p.price && p.price > 0 ? p.price : ""
-                        }}{{ p.price && p.price > 0 ? "$ per Month" : "" }}
-                      </h3>
-                      <ul>
-                        <li v-for="f in p.features" :key="p.name + f">
-                          {{ f }}
-                        </li>
-                      </ul>
-                    </div>
+                <div class="columns is-multiline content has-text-left" v-else>
+                  <div class="column is-12" v-for="p in prices" :key="p.name">
+                    <h3>
+                      {{ p.name }} {{ p.price && p.price > 0 ? p.price : ""
+                      }}{{ p.price && p.price > 0 ? "$ per Month" : "" }}
+                    </h3>
+                    <ul>
+                      <li v-for="f in p.features" :key="(p.name + f)">
+                        {{ f }}
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -141,13 +124,6 @@ export default {
         window.innerHeight || 0
       ),
     };
-  },
-  computed: {
-    markdown() {
-      return this.selected && this.selected.textExtended
-        ? md.render(this.selected.textExtended)
-        : "<span />";
-    },
   },
   async mounted() {
     const client = Contentful.createClient();
@@ -184,6 +160,11 @@ export default {
       }
 
       return false;
+    },
+    markdown(selected) {
+      return selected && selected.textExtended
+        ? md.render(selected.textExtended)
+        : "<span />";
     },
   },
   components: {

@@ -15,9 +15,18 @@
       :class="'navbar-menu '.concat(hasOpenMenu === true ? 'is-active' : '')"
     >
       <div class="navbar-end" @click="toggleNavbar">
-        <router-link class="navbar-item" :to="{ name: 'index' }">
+        <a class="navbar-item" href="/#home">
           Home
-        </router-link>
+        </a>
+        <a class="navbar-item" href="/#solution">
+          Solution
+        </a>
+        <a class="navbar-item" href="/#integrations">
+          Integrations
+        </a>
+        <a class="navbar-item" href="/#pricing">
+          Pricing
+        </a>
       </div>
     </div>
   </nav>
@@ -27,14 +36,14 @@
 export default {
   data() {
     return {
-      hasOpenMenu: false
+      hasOpenMenu: false,
     };
   },
   methods: {
     toggleNavbar() {
       this.hasOpenMenu = !this.hasOpenMenu;
-    }
-  }
+    },
+  },
 };
 </script>
 

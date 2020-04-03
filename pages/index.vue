@@ -1,16 +1,57 @@
 <template>
   <div class="snap">
     <div class="overlay"></div>
+    <div class="hero is-fixed is-fullheight is-hidden-mobile">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-8 is-offset-4">
+              <div
+                :class="`box content ${
+                  (selected.text && selected.text.length > 0) ||
+                  selected.hasPricing === true
+                    ? 'is-visible-box'
+                    : 'is-invisible-box'
+                }`"
+              >
+                <h1 v-if="selected.hasPricing !== true">
+                  {{ selected.titleExtended }}
+                </h1>
+                <div
+                  class="has-margin-bottom has-text-left"
+                  v-if="selected.hasPricing !== true"
+                  v-html="markdown"
+                />
+
+                <div class="columns is-multiline content has-text-left" v-else>
+                  <div class="column is-12" v-for="p in prices" :key="p.name">
+                    <h3>
+                      {{ p.name }} {{ p.price && p.price > 0 ? p.price : ""
+                      }}{{ p.price && p.price > 0 ? "$ per Month" : "" }}
+                    </h3>
+                    <ul>
+                      <li v-for="f in p.features" :key="(p.name + f)">
+                        {{ f }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <section
       v-for="h in heroes"
-      :id="h.title"
+      :id="h.ancher"
       :key="h.title"
       class="hero is-transparent is-fullheight"
     >
       <div class="hero-body">
         <div class="container">
           <div class="columns">
-            <div class="column box is-4">
+            <div class="column is-4 has-text-white">
               <h1 class="title">
                 {{ h.title }}
               </h1>
@@ -34,47 +75,38 @@
           <div class="container">
             <div class="columns">
               <div class="column is-8 is-offset-4">
-                <div class="box content">
-                  <h1>Im serious</h1>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="hero is-fixed is-fullheight is-hidden-mobile">
-      <div class="hero-body">
-        <div class="container">
-          <div class="columns">
-            <div class="column is-8 is-offset-4">
-              <div
-                :class="`box content ${
-                  (selected.text && selected.text.length > 0) ||
-                  selected.hasPricing === true
-                    ? 'is-visible-box'
-                    : 'is-invisible-box'
-                }`"
-              >
-                <h1 v-if="selected.hasPricing !== true">
-                  {{ selected.title }}
-                </h1>
-                <p
-                  class="has-margin-bottom"
-                  v-if="selected.hasPricing !== true"
+                <div
+                  :class="`box content ${
+                    (selected.text && selected.text.length > 0) ||
+                    selected.hasPricing === true
+                      ? 'is-visible-box'
+                      : 'is-invisible-box'
+                  }`"
                 >
-                  {{ selected.text }}
-                </p>
+                  <h1 v-if="selected.hasPricing !== true">
+                    {{ selected.title }}
+                  </h1>
+                  <div
+                    class="has-margin-bottom"
+                    v-if="selected.hasPricing !== true"
+                    v-html="markdown"
+                  />
 
-                <div class="columns is-multiline content has-text-left" v-else>
-                  <div class="column is-12" v-for="p in prices" :key="p.name">
-                    <h3>
-                      {{ p.name }} {{ p.price && p.price > 0 ? p.price : ""
-                      }}{{ p.price && p.price > 0 ? "$ per Month" : "" }}
-                    </h3>
-                    <ul>
-                      <li v-for="f in p.features" :key="name + f">{{ f }}</li>
-                    </ul>
+                  <div
+                    class="columns is-multiline content has-text-left"
+                    v-else
+                  >
+                    <div class="column is-12" v-for="p in prices" :key="p.name">
+                      <h3>
+                        {{ p.name }} {{ p.price && p.price > 0 ? p.price : ""
+                        }}{{ p.price && p.price > 0 ? "$ per Month" : "" }}
+                      </h3>
+                      <ul>
+                        <li v-for="f in p.features" :key="p.name + f">
+                          {{ f }}
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -82,7 +114,8 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
     <footer-comp />
   </div>
 </template>
@@ -91,6 +124,12 @@
 import Contentful from "../plugins/contentful.js";
 import PricingCard from "../components/Billing/PricingCard.vue";
 import FooterComp from "../components/Footer.vue";
+import mdConstructor from "markdown-it";
+const md = mdConstructor({
+  html: true,
+  linkify: true,
+  typographer: true,
+});
 export default {
   data() {
     return {
@@ -103,6 +142,13 @@ export default {
       ),
     };
   },
+  computed: {
+    markdown() {
+      return this.selected && this.selected.textExtended
+        ? md.render(this.selected.textExtended)
+        : "<span />";
+    },
+  },
   async mounted() {
     const client = Contentful.createClient();
     const resHeroes = await client.getEntries({
@@ -112,7 +158,7 @@ export default {
       .map((e) => e.fields)
       .sort((a, b) => (a.order > b.order ? 1 : -1));
     this.heroes.forEach((e) => {
-      document.addEventListener("scroll", () => this.inView(e.title));
+      document.addEventListener("scroll", () => this.inView(e.ancher));
     });
     if (this.heroes.find((e) => e.hasPricing === true)) {
       const resPricing = await client.getEntries({
@@ -132,10 +178,11 @@ export default {
       var elementHeight = element.clientHeight;
       var elementPosition =
         element.getBoundingClientRect().top + scrollY + elementHeight;
-      if (scrollPosition > elementPosition) {
-        this.selected = this.heroes.find((e) => e.title === id);
+      if (scrollPosition > elementPosition - 100) {
+        this.selected = this.heroes.find((e) => e.ancher === id);
         return true;
       }
+
       return false;
     },
   },
@@ -179,7 +226,7 @@ export default {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  background-image: url("/images/hero1-background.jpg");
+  background-image: url("/images/hero2-background.jpg");
 }
 a:hover {
   transform: scale(1.04);
@@ -196,5 +243,12 @@ a:hover {
 .box.is-invisible-box {
   opacity: 0;
   transition: opacity 300ms ease-in;
+}
+.has-text-white .title,
+.has-text-white .subtitle {
+  color: white;
+}
+.snap {
+  scroll-behavior: smooth;
 }
 </style>

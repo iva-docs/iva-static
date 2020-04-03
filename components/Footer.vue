@@ -5,8 +5,8 @@
       style="z-index: 10;"
     >
       Iva-docs.com made by Khaled Romdhane |
-      <a href="https://app.iva-docs.com/privacy-policies">Privacy policies</a> |
-      <a href="https://app.iva-docs.com/terms">Terms of service</a>
+      <a href="/privacy-policies">Privacy policies</a> |
+      <a href="/terms">Terms of service</a>
     </div>
   </footer>
 </template>

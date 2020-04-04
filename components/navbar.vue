@@ -30,7 +30,7 @@
 
         <a
           class="navbar-item is-primary"
-          href="https://app.iva-docs.com/auth/register"
+          href="https://app.iva-docs.com/auth/login"
         >
           <button class="button is-primary">
             Login
@@ -45,14 +45,14 @@
 export default {
   data() {
     return {
-      hasOpenMenu: false,
+      hasOpenMenu: false
     };
   },
   methods: {
     toggleNavbar() {
       this.hasOpenMenu = !this.hasOpenMenu;
-    },
-  },
+    }
+  }
 };
 </script>
 

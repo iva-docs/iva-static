@@ -134,7 +134,7 @@ export default {
         document.documentElement ? document.documentElement.clientHeight : 0,
         window.innerHeight || 0
       ),
-      background: "/images/hero2-background.jpg"
+      background: ""
     };
   },
   async mounted() {

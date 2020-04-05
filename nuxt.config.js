@@ -18,10 +18,10 @@ module.exports = {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     script: [
-      { src: "/drift.js" },
-      { src: "/optimize-img.js" },
-      { src: "https://cdn.iubenda.com/cs/iubenda_cs.js" },
-      { src: "ibuenda.js" },
+      { src: "/drift.js", mode: "client" },
+      { src: "/optimize-img.js", mode: "server" },
+      { src: "https://cdn.iubenda.com/cs/iubenda_cs.js", mode: "client" },
+      { src: "ibuenda.js", mode: "server" },
     ],
   },
   /*

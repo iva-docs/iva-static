@@ -1,5 +1,5 @@
 <template>
-  <div class="snap">
+  <div class="snap" :style="`background-image: url(${background})`">
     <div class="overlay"></div>
     <div class="hero is-fixed is-fullheight is-hidden-mobile">
       <div class="hero-body">
@@ -7,12 +7,14 @@
           <div class="columns">
             <div class="column is-8 is-offset-4">
               <div
-                :class="`box content ${
-                  (selected.text && selected.text.length > 0) ||
-                  selected.hasPricing === true
-                    ? 'is-visible-box'
-                    : 'is-invisible-box'
-                }`"
+                :class="
+                  `box content ${
+                    (selected.text && selected.text.length > 0) ||
+                    selected.hasPricing === true
+                      ? 'is-visible-box'
+                      : 'is-invisible-box'
+                  }`
+                "
               >
                 <h1 v-if="selected.hasPricing !== true">
                   {{ selected.titleExtended }}
@@ -30,7 +32,7 @@
                       }}{{ p.price && p.price > 0 ? "$ per Month" : "" }}
                     </h3>
                     <ul>
-                      <li v-for="f in p.features" :key="(p.name + f)">
+                      <li v-for="f in p.features" :key="p.name + f">
                         {{ f }}
                       </li>
                     </ul>
@@ -89,7 +91,7 @@
                       }}{{ p.price && p.price > 0 ? "$ per Month" : "" }}
                     </h3>
                     <ul>
-                      <li v-for="f in p.features" :key="(p.name + f)">
+                      <li v-for="f in p.features" :key="p.name + f">
                         {{ f }}
                       </li>
                     </ul>
@@ -120,7 +122,7 @@ import mdConstructor from "markdown-it";
 const md = mdConstructor({
   html: true,
   linkify: true,
-  typographer: true,
+  typographer: true
 });
 export default {
   data() {
@@ -132,27 +134,34 @@ export default {
         document.documentElement ? document.documentElement.clientHeight : 0,
         window.innerHeight || 0
       ),
+      background: "/images/hero2-background.jpg"
     };
   },
   async mounted() {
     const client = Contentful.createClient();
     const resHeroes = await client.getEntries({
-      content_type: process.env.CTF_INDEX_HERO_ID,
+      content_type: process.env.CTF_INDEX_HERO_ID
     });
     this.heroes = resHeroes.items
-      .map((e) => e.fields)
+      .map(e => e.fields)
       .sort((a, b) => (a.order > b.order ? 1 : -1));
-    this.heroes.forEach((e) => {
+    this.heroes.forEach(e => {
       document.addEventListener("scroll", () => this.inView(e.ancher));
     });
-    if (this.heroes.find((e) => e.hasPricing === true)) {
+    if (this.heroes.find(e => e.hasPricing === true)) {
       const resPricing = await client.getEntries({
-        content_type: process.env.CTF_PRICING_ID,
+        content_type: process.env.CTF_PRICING_ID
       });
       this.prices = resPricing.items
-        .map((e) => e.fields)
+        .map(e => e.fields)
         .sort((a, b) => (a.order > b.order ? 1 : -1));
     }
+    const assets = await client.getAssets();
+    assets.items.map(asset => {
+      if (asset.fields.title === "Women 2")
+        this.background =
+          "https:" + asset.fields.file.url + "?h=" + window.innerHeight;
+    });
   },
   methods: {
     inView(id) {
@@ -164,7 +173,7 @@ export default {
       var elementPosition =
         element.getBoundingClientRect().top + scrollY + elementHeight;
       if (scrollPosition > elementPosition - 100) {
-        this.selected = this.heroes.find((e) => e.ancher === id);
+        this.selected = this.heroes.find(e => e.ancher === id);
         return true;
       }
 
@@ -174,12 +183,12 @@ export default {
       return selected && selected.textExtended
         ? md.render(selected.textExtended)
         : "<span />";
-    },
+    }
   },
   components: {
     PricingCard,
-    FooterComp,
-  },
+    FooterComp
+  }
 };
 </script>
 

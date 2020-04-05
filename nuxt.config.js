@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 module.exports = {
+  lang: "english",
   /*
    ** Headers of the page
    */
@@ -18,16 +19,20 @@ module.exports = {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     script: [
-      { src: "/drift.js", mode: "client" },
-      { src: "/optimize-img.js", mode: "server" },
-      { src: "https://cdn.iubenda.com/cs/iubenda_cs.js", mode: "client" },
-      { src: "ibuenda.js", mode: "server" },
+      { src: "/drift.js", mode: "client", defer: true },
+      { src: "/optimize-img.js", mode: "server", defer: true },
+      {
+        src: "https://cdn.iubenda.com/cs/iubenda_cs.js",
+        mode: "client",
+        defer: true,
+      },
+      { src: "ibuenda.js", mode: "server", defer: true },
     ],
   },
   /*
    ** Customize the progress bar color
    */
-  loading: { color: "#3B8070" },
+  loading: { color: "#28549c" },
   env: { ...process.env },
   /*
    ** Build configuration

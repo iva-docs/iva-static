@@ -29,7 +29,7 @@
                   <div class="column is-12" v-for="p in prices" :key="p.name">
                     <h3>
                       {{ p.name }} {{ p.price && p.price > 0 ? p.price : ""
-                      }}{{ p.price && p.price > 0 ? "$ per Month" : "" }}
+                      }}{{ p.price && p.price > 0 ? "€ per Month" : "" }}
                     </h3>
                     <ul>
                       <li v-for="f in p.features" :key="p.name + f">
@@ -88,7 +88,7 @@
                   <div class="column is-12" v-for="p in prices" :key="p.name">
                     <h3>
                       {{ p.name }} {{ p.price && p.price > 0 ? p.price : ""
-                      }}{{ p.price && p.price > 0 ? "$ per Month" : "" }}
+                      }}{{ p.price && p.price > 0 ? "€ per Month" : "" }}
                     </h3>
                     <ul>
                       <li v-for="f in p.features" :key="p.name + f">

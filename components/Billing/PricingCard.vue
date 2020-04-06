@@ -26,7 +26,7 @@
               ? "Free"
               : price === -1
               ? "Talk to us"
-              : price + "$ per month"
+              : price + "€ per month"
           }}
         </a>
       </div>

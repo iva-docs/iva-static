@@ -1,5 +1,5 @@
 <template>
-  <div class="dialog-box content" style="margin-top:-5vw">
+  <div class="dialog-box content" style="margin-top:-10vw">
     <div class="box-content">
       <img src="/images/dialogv3.png" />
       <h3>
@@ -25,7 +25,6 @@ export default {
 <style lang="scss" scoped>
 .dialog-box {
   width: 100%;
-  height: 100%;
 }
 
 .box-content {
@@ -34,19 +33,11 @@ export default {
   width: 100%;
 }
 
-.box-content > img {
-  pointer-events: none;
-  position: absolute;
-  width: 100%;
-  height: auto;
-  z-index: 0;
-}
-
 .box-content > h3 {
   position: relative;
   padding-left: 5vw;
   padding-right: 2vw;
-  margin-top: 2vw;
+  // margin-top: 2vw;
   margin-bottom: 0;
 }
 .box-content > h5 {

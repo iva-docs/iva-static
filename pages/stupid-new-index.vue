@@ -48,9 +48,19 @@
             <div class="column is-4">
               <Dialog
                 h3="Focus"
-                p="Let Iva do the repetitive work. Find all your documents in your Email inbox, Cloudstorage and other integrations"
+                p="Let Iva do the repetitive work. Focus of what's important."
                 :v2="true"
               />
+            </div>
+
+            <div class="column is-offset-3 is-5" style="padding-top:24px">
+              <Dialog
+                h3="Your time is precious, that's why we automate"
+                :v3="true"
+              />
+            </div>
+            <div class="column is-2" style="padding-top:24px;z-index:1;">
+              <img src="/images/Big-me.png" />
             </div>
           </div>
         </div>
@@ -59,15 +69,20 @@
     <section class="hero is-fullheight is-hero1">
       <div class="hero-body content">
         <div class="columns is-multiline">
-          <div class="column is-6">
+          <div class="column is-offset-2 is-4">
+            <Dialog h3="Iva at the center of your process" p="" />
+          </div>
+          <div class="column is-3">
+            <img src="/images/logo-border.png" />
+          </div>
+          <div class="column is-offset-1 is-4">
             <Dialog
-              h3="Never write a document yourself"
-              p="I belive your time is precious"
+              h3=""
+              p="Iva will handle all your documents and moves them into your day to day tools. Import data from Zapier, CSV files and more. Find your documents in your e-mail inbox, Cloud storage such as Google drive or connect it to zapier to more automation."
             />
           </div>
-          <div class="column is-offset-2 is-4">
-            <img src="/images/Big-me.png" />
-            <DialogName h3="Khaled Romdhane" h5="Iva-docs" />
+          <div class="column is-3">
+            <img src="/images/integrations.png" />
           </div>
         </div>
       </div>
@@ -75,37 +90,35 @@
     <section class="hero is-fullheight is-hero2">
       <div class="hero-body content">
         <div class="columns is-multiline">
-          <div class="column is-6">
-            <Dialog h3="Never write a document yourself" p="" />
-          </div>
           <div class="column is-offset-2 is-4">
+            <Dialog h3="My team saves around an hour a day. Spent talking to client instead of writing documents" p="" />
+          </div>
+          <div class="column is-offset-2 is-3">
             <img src="/images/pauline.jpeg" />
-            <DialogName h3="Pauline Wuilleme" h5="MedGo" />
+          </div>
+          <div class="column is-offset-2 is-3">
+            <img src="/images/sharon.jpeg" />
           </div>
           <div class="column is-4">
-            <img src="/images/sharon.jpeg" />
-            <DialogName h3="Sharon Journo" h5="MedGo" />
-          </div>
-          <div class="column is-offset-2 is-6">
-            <Dialog
-              h3="Never write a document yourself"
-              p="
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto eius corporis ex ullam blanditiis eaque ea deleniti incidunt laboriosam laborum? Deserunt expedita, cumque animi neque tempore distinctio ea sed officia."
-            />
+            <Dialog h3="I can't see myselft editing documents anymore" p="" />
           </div>
         </div>
       </div>
     </section>
+    <footer-component />
   </div>
 </template>
 
 <script>
 import Dialog from "../components/Dialog.vue";
 import DialogName from "../components/DialogName.vue";
+import FooterComponent from "../components/Footer.vue";
+
 export default {
   components: {
     Dialog,
-    DialogName
+    DialogName,
+    FooterComponent: FooterComponent
   }
 };
 </script>

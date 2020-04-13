@@ -1,9 +1,15 @@
 <template>
-  <div class="dialog-box content" :style="v2 ? 'margin-top:-40vh;' : ''">
-    <div class="box-content">
-      <img src="/images/dialog-box.png" v-if="!v2 && !v3" />
-      <img src="/images/dialogv2.png" v-if="v2" />
-      <img src="/images/dialogv3.png" v-if="v3" />
+  <div class="dialog-box content">
+    <div
+      :class="
+        `box-content ${isSmall ? 'is-small' : ''} ${
+          isMedium ? 'is-medium' : ''
+        } ${isLarge ? 'is-large' : ''}`
+      "
+    >
+      <img src="/images/dialogv3.png" v-if="isSmall" />
+      <img src="/images/dialog-box.png" v-if="isMedium" />
+      <img src="/images/dialogv2.png" v-if="isLarge" />
       <h3>
         {{ h3 }}
       </h3>
@@ -29,6 +35,31 @@ export default {
     v2: Boolean,
     v3: Boolean,
     button: String
+  },
+  computed: {
+    innerWidth() {
+      return window.innerWidth;
+    },
+    isSmall() {
+      return innerWidth > 1408 && (!this.p || (this.p && this.p.length < 80));
+    },
+    isMedium() {
+      return (
+        (innerWidth < 1408 &&
+          innerWidth > 1024 &&
+          (!this.p || this.p.length < 80)) ||
+        (innerWidth > 1408 && this.p && this.p.length >= 80)
+      );
+    },
+    isLarge() {
+      return (
+        innerWidth < 1024 ||
+        (innerWidth > 1024 &&
+          this.p &&
+          this.p.length >= 80 &&
+          innerWidth < 1408)
+      );
+    }
   }
 };
 </script>
@@ -45,6 +76,9 @@ export default {
   position: relative;
   width: 100%;
 }
+.box-content.is-small {
+  padding-top: 15vh;
+}
 
 .box-content > img {
   pointer-events: none;
@@ -56,9 +90,20 @@ export default {
 
 .box-content > h3 {
   position: relative;
-  padding-left: 8vw;
-  padding-top: 5vh;
-  padding-right: 8vw;
+  padding-left: 5vw;
+  padding-top: 3vh;
+  padding-right: 5vw;
+}
+.box-content.is-small > h3 {
+  padding-top: 0;
+}
+
+.box-content.is-medium > p {
+  padding-left: 5vw;
+}
+.box-content.is-large > p {
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
 .box-content > p {
@@ -66,7 +111,16 @@ export default {
   padding-left: 5vw;
   padding-right: 3vw;
 }
+.box-content.is-medium > p {
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
 .box-content > a {
   position: relative;
+}
+
+h3 {
+  margin-bottom: 0;
 }
 </style>

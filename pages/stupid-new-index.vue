@@ -27,7 +27,7 @@
         </div>
       </div>
     </section>
-    <section class="hero is-fullheight is-hero-integrations">
+    <section class="hero is-fullheight is-hero-integrations" id="solution">
       <div class="hero-body">
         <div class="container">
           <div class="columns is-multiline">
@@ -53,9 +53,12 @@
               />
             </div>
 
-            <div class="column is-offset-3 is-5" style="padding-top:24px">
+            <div class="column is-3 is-offset-1" style="padding-top:48px">
+              <img src="/images/logo-border.png" />
+            </div>
+            <div class="column  is-4" style="padding-top:24px">
               <Dialog
-                h3="Your time is precious, that's why we automate"
+                h3="Software in itself doesn't save you time, adding it to your process does."
                 :v3="true"
               />
             </div>
@@ -66,11 +69,14 @@
         </div>
       </div>
     </section>
-    <section class="hero is-fullheight is-hero1">
+    <section class="hero is-fullheight is-hero1" id="integrations">
       <div class="hero-body content">
         <div class="columns is-multiline">
           <div class="column is-offset-2 is-4">
-            <Dialog h3="Iva at the center of your process" p="" />
+            <Dialog
+              h3="Iva at the center of your process. Repetitive work can be automated"
+              p=""
+            />
           </div>
           <div class="column is-3">
             <img src="/images/logo-border.png" />
@@ -87,20 +93,53 @@
         </div>
       </div>
     </section>
-    <section class="hero is-fullheight is-hero2">
+    <section class="hero is-fullheight is-hero2" id="happy-customers">
       <div class="hero-body content">
         <div class="columns is-multiline">
-          <div class="column is-offset-2 is-4">
-            <Dialog h3="My team saves around an hour a day. Spent talking to client instead of writing documents" p="" />
+          <div class="column is-offset-1 is-2">
+            <img src="/images/zap-iva.png" />
           </div>
-          <div class="column is-offset-2 is-3">
-            <img src="/images/pauline.jpeg" />
+          <div class="column is-4" style="margin-left:10vw;">
+            <Dialog
+              h3="My team saves around an hour a day. Spent talking to client instead of writing documents."
+              p=""
+            />
           </div>
-          <div class="column is-offset-2 is-3">
-            <img src="/images/sharon.jpeg" />
+          <div class="column is-4" style="max-height:40vh;margin-left:-10vw;">
+            <img src="/images/pauline.png" />
           </div>
-          <div class="column is-4">
-            <Dialog h3="I can't see myselft editing documents anymore" p="" />
+          <div
+            class="column is-offset-1 is-4"
+            style="max-height:40vh;margin-left:8vw;"
+          >
+            <img src="/images/sharon.png" />
+          </div>
+          <div class="column is-4" style="padding-top:20vh;margin-left:-8vw;">
+            <Dialog
+              h3="I can't see myselft editing documents anymore. Now they just popup in my inbox."
+              p=""
+            />
+          </div>
+          <!-- <div class="column is-2" style="padding-top:20vh">
+            <img src="/images/gmail-iva.png" />
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <section class="hero is-fullheight is-hero3" id="pricing">
+      <div class="hero-body content">
+        <div class="container">
+          <div class="columns is-multiline">
+            <div class="column is-4" v-for="p in prices" :key="p.name">
+              <pricing-card
+                :name="p.name"
+                :price="p.price"
+                :isFeatured="p.isFeatured"
+                :featuredText="p.featuredText"
+                :features="p.features"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -113,12 +152,29 @@
 import Dialog from "../components/Dialog.vue";
 import DialogName from "../components/DialogName.vue";
 import FooterComponent from "../components/Footer.vue";
+import Contentful from "../plugins/contentful.js";
+import PricingCard from "../components/Billing/PricingCard.vue";
 
 export default {
+  data() {
+    return {
+      prices: []
+    };
+  },
+  async mounted() {
+    const client = Contentful.createClient();
+    const resPricing = await client.getEntries({
+      content_type: process.env.CTF_PRICING_ID
+    });
+    this.prices = resPricing.items
+      .map(e => e.fields)
+      .sort((a, b) => (a.order > b.order ? 1 : -1));
+  },
   components: {
     Dialog,
     DialogName,
-    FooterComponent: FooterComponent
+    FooterComponent: FooterComponent,
+    PricingCard
   }
 };
 </script>
@@ -135,6 +191,9 @@ export default {
 }
 .is-hero2 {
   background-image: url("/images/hero2.png");
+}
+.is-hero3 {
+  background-image: url("/images/hero3.png");
 }
 .is-hero-integrations {
   background-image: url("/images/hero-integrations.png");

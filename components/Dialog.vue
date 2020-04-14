@@ -64,7 +64,6 @@ export default {
 };
 </script>
 
-
 <style lang="scss" scoped>
 .dialog-box {
   width: 100%;
@@ -95,7 +94,8 @@ export default {
   padding-right: 5vw;
 }
 .box-content.is-small > h3 {
-  padding-top: 0;
+  padding-top: 2vh;
+  margin-top: 0;
 }
 
 .box-content.is-medium > p {

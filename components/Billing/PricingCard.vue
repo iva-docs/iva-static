@@ -20,15 +20,10 @@
       "
     >
       <div class="card-footer-item">
-        <a href="https://app.iva-docs.com/auth/register">
-          {{
-            price === 0
-              ? "Free"
-              : price === -1
-              ? "Talk to us"
-              : price + "€ per month"
-          }}
+        <a href="https://app.iva-docs.com/auth/register" v-if="price !== -1">
+          {{ price === 0 ? "Free" : price + "€ per month" }}
         </a>
+        <a href="mailto:khaled@iva-docs.com" v-if="price === -1">Talk to us</a>
       </div>
     </footer>
   </div>

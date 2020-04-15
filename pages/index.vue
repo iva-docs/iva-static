@@ -1,251 +1,315 @@
 <template>
-  <div class="snap" :style="`background-image: url(${background})`">
-    <div class="overlay"></div>
-    <div class="hero is-fixed is-fullheight is-hidden-mobile">
+  <div>
+    <section class="hero is-fullheight content" id="home">
       <div class="hero-body">
         <div class="container">
-          <div class="columns">
-            <div class="column is-8 is-offset-4">
-              <div
-                :class="
-                  `box content ${
-                    (selected.text && selected.text.length > 0) ||
-                    selected.hasPricing === true
-                      ? 'is-visible-box'
-                      : 'is-invisible-box'
-                  }`
-                "
+          <div class="columns is-multiline">
+            <div class="column is-6" style="padding-top:5vh;">
+              <h1 class="has-text-white">
+                Connect your data with your documents
+              </h1>
+              <h3 class="has-text-white">
+                Iva moves data from you day to day tools into your documents, so
+                you can focus on what's important.
+              </h3>
+              <a
+                href="https://app.iva-docs.com/auth/register"
+                class="button is-primary is-large is-fullwidth is-info"
               >
-                <h1 v-if="selected.hasPricing !== true">
-                  {{ selected.titleExtended }}
-                </h1>
-                <div
-                  class="has-margin-bottom has-text-left"
-                  v-if="selected.hasPricing !== true"
-                  v-html="markdown(selected)"
-                />
+                Try now
+              </a>
+            </div>
 
-                <div class="columns is-multiline content has-text-left" v-else>
-                  <div class="column is-12" v-for="p in prices" :key="p.name">
-                    <h3>
-                      {{ p.name }} {{ p.price && p.price > 0 ? p.price : ""
-                      }}{{ p.price && p.price > 0 ? "€ per Month" : "" }}
-                    </h3>
-                    <ul>
-                      <li v-for="f in p.features" :key="p.name + f">
-                        {{ f }}
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+            <div class="column is-6">
+              <img src="/images/logo-border.png" />
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <section
-      v-for="h in heroes"
-      :id="h.ancher"
-      :key="h.title"
-      class="hero is-fullheight"
-    >
+    </section>
+    <section class="hero is-fullheight is-hero-integrations" id="solution">
       <div class="hero-body">
         <div class="container">
-          <div class="columns">
-            <div class="column is-4 has-text-white">
-              <h1 class="title">
-                {{ h.title }}
-              </h1>
-              <h2 class="subtitle" v-if="h.subtitle && h.subtitle.length > 0">
-                {{ h.subtitle }}
-              </h2>
-              <p class="has-margin-bottom" v-if="h.text && h.text.length > 0">
-                {{ h.text }}
-              </p>
-              <a
-                :href="h.href"
-                class="button is-primary is-large is-fullwidth is-hidden-mobile"
-              >
-                {{ h.callToAction }}
-              </a>
+          <div class="columns is-multiline">
+            <div class="column is-4">
+              <Dialog
+                h3="Set up"
+                p="Configure your document with instructions for Iva to execute."
+                :v2="true"
+              />
+            </div>
+            <div class="column is-4">
+              <Dialog
+                h3="Send data"
+                p="Connect Iva to your other tools. Import data from you CSV."
+                :v2="true"
+              />
+            </div>
+            <div class="column is-4">
+              <Dialog
+                h3="Focus"
+                p="Let Iva do the repetitive work. Focus of what's important."
+                :v2="true"
+              />
+            </div>
+
+            <div class="column is-3 is-offset-1" style="padding-top:48px">
+              <img src="/images/logo-border.png" />
+            </div>
+            <div class="column  is-4" style="padding-top:24px">
+              <Dialog
+                h3="Software in itself doesn't save you time, adding it to your process does."
+                :v3="true"
+              />
+            </div>
+            <div class="column is-2" style="padding-top:24px;z-index:3;">
+              <img src="/images/Big-me.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="hero is-fullheight is-hero1" id="integrations">
+      <div class="hero-body content">
+        <div class="columns is-multiline">
+          <div class="column is-offset-2 is-4">
+            <Dialog
+              h3="Iva at the center of your process. Repetitive work can be automated"
+              p=""
+            />
+          </div>
+          <div class="column is-3 is-hidden-mobile">
+            <img src="/images/logo-border.png" />
+          </div>
+          <div class="column is-offset-1 is-4">
+            <Dialog
+              h3=""
+              p="Iva will handle all your documents and moves them into your day to day tools. Import data from Zapier, CSV files and more. Find your documents in your e-mail inbox, Cloud storage such as Google drive or connect it to zapier to more automation."
+            />
+          </div>
+          <div class="column is-3 is-hidden-mobile">
+            <img src="/images/integrations.png" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="hero is-fullheight is-hero2" id="happy-customers">
+      <div class="hero-body content">
+        <div class="container">
+          <div class="columns is-multiline is-hidden-mobile">
+            <div class="column is-offset-1 is-2">
+              <img src="/images/zap-iva.png" />
+            </div>
+            <div class="column is-4" style="margin-left:10vw;">
+              <Dialog
+                h3="My team saves around an hour a day. Spent talking to client instead of writing documents."
+                p=""
+              />
+            </div>
+            <div class="column is-4" style="max-height:40vh;margin-left:-10vw;">
+              <img src="/images/pauline.png" />
             </div>
             <div
-              class="column is-8 is-hidden-tablet"
-              v-if="(h.text && h.text.length > 0) || h.hasPricing === true"
+              class="column is-offset-1 is-4"
+              style="max-height:40vh;margin-left:5vw;"
             >
-              <div :class="`box content`">
-                <h1 v-if="h.hasPricing !== true">
-                  {{ h.titleExtended }}
-                </h1>
-                <div
-                  class="has-margin-bottom has-text-left"
-                  v-if="h.hasPricing !== true"
-                  v-html="markdown(h)"
-                />
+              <img src="/images/sharon.png" />
+            </div>
+            <div class="column is-4" style="padding-top:20vh;margin-left:-5vw;">
+              <Dialog
+                h3="I can't see myselft editing documents anymore. Now they just popup in my inbox."
+                p=""
+              />
+            </div>
+          </div>
+          <!-- Mobile -->
+          <div class="columns is-multiline is-hidden-tablet">
+            <div class="column is-12">
+              <img src="/images/pauline.png" />
+            </div>
+            <div
+              class="column is-12"
+              style="margin-top:-5vh;margin-bottom:20vh;"
+            >
+              <Dialog
+                h3="My team saves around an hour a day. Spent talking to client instead of writing documents."
+                p=""
+              />
+            </div>
 
-                <div class="columns is-multiline content has-text-left" v-else>
-                  <div class="column is-12" v-for="p in prices" :key="p.name">
-                    <h3>
-                      {{ p.name }} {{ p.price && p.price > 0 ? p.price : ""
-                      }}{{ p.price && p.price > 0 ? "€ per Month" : "" }}
-                    </h3>
-                    <ul>
-                      <li v-for="f in p.features" :key="p.name + f">
-                        {{ f }}
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <a
-                :href="h.href"
-                class="button is-primary is-large is-fullwidth is-hidden-tablet"
-              >
-                {{ h.callToAction }}
-              </a>
+            <div class="column is-12">
+              <img src="/images/sharon.png" />
+            </div>
+            <div
+              class="column is-12"
+              style="margin-top:-20vh;margin-bottom:20vh;"
+            >
+              <Dialog
+                h3="I can't see myselft editing documents anymore. Now they just popup in my inbox."
+                p=""
+              />
+            </div>
+          </div>
+          <!-- <div class="column is-2" style="padding-top:20vh">
+            <img src="/images/gmail-iva.png" />
+          </div> -->
+        </div>
+      </div>
+    </section>
+    <section class="hero is-fullheight is-hero3" id="developers">
+      <div class="hero-body content">
+        <div class="container">
+          <div class="columns is-multiline is-hidden-mobile">
+            <div class="column is-4 has-text-centered" style="padding-top:10vh">
+              <img src="/images/npm-logo.png" />
+            </div>
+            <div class="column is-4 has-text-centered">
+              <img src="/images/zapier-logo.png" style="padding-top:10vh" />
+            </div>
+            <div class="column is-4 has-text-centered">
+              <img src="/images/postman-logo.png" style="padding-top:10vh" />
+            </div>
+            <div class="column is-4">
+              <Dialog
+                h3="Find us on NPM. "
+                p=""
+                href="https://www.npmjs.com/package/iva-converter"
+                button="Iva-converter"
+              />
+            </div>
+            <div class="column is-4">
+              <Dialog
+                h3="Find us on Zapier. "
+                p=""
+                href="https://zapier.com/apps/iva-docs/integrations"
+                button="Iva integration"
+              />
+            </div>
+            <div class="column is-4">
+              <Dialog
+                h3="Read our dev docs. "
+                p=""
+                href="https://documenter.getpostman.com/view/11039305/SzYgRvVW?version=latest"
+                button="Documentation"
+              />
+            </div>
+          </div>
+          <div class="columns is-multiline is-hidden-tablet">
+            <div class="column is-12 has-text-centered">
+              <img src="/images/npm-logo.png" />
+            </div>
+            <div class="column is-12" style="margin-bottom:40vh;">
+              <Dialog
+                h3="Find us on NPM. "
+                p=""
+                href="https://www.npmjs.com/package/iva-converter"
+                button="Iva-converter"
+              />
+            </div>
+            <div class="column is-12 has-text-centered">
+              <img src="/images/zapier-logo.png" />
+            </div>
+            <div class="column is-12" style="margin-bottom:40vh;">
+              <Dialog
+                h3="Find us on Zapier. "
+                p=""
+                href="https://zapier.com/apps/iva-docs/integrations"
+                button="Iva integration"
+              />
+            </div>
+            <div class="column is-12 has-text-centered">
+              <img src="/images/postman-logo.png" />
+            </div>
+            <div class="column is-12" style="margin-bottom:40vh;">
+              <Dialog
+                h3="Read our dev docs. "
+                p=""
+                href="https://documenter.getpostman.com/view/11039305/SzYgRvVW?version=latest"
+                button="Documentation"
+              />
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <footer-comp />
+    <section class="hero is-fullheight is-hero2" id="pricing">
+      <div class="hero-body content">
+        <div class="container">
+          <div class="columns is-multiline">
+            <div class="column is-4" v-for="p in prices" :key="p.name">
+              <pricing-card
+                :name="p.name"
+                :price="p.price"
+                :isFeatured="p.isFeatured"
+                :featuredText="p.featuredText"
+                :features="p.features"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer-component />
   </div>
 </template>
 
 <script>
+import Dialog from "../components/Dialog.vue";
+import DialogName from "../components/DialogName.vue";
+import FooterComponent from "../components/Footer.vue";
 import Contentful from "../plugins/contentful.js";
 import PricingCard from "../components/Billing/PricingCard.vue";
-import FooterComp from "../components/Footer.vue";
-import mdConstructor from "markdown-it";
-const md = mdConstructor({
-  html: true,
-  linkify: true,
-  typographer: true
-});
+
 export default {
   data() {
     return {
-      heroes: [],
-      prices: [],
-      selected: {},
-      viewHeight: Math.max(
-        document.documentElement ? document.documentElement.clientHeight : 0,
-        window.innerHeight || 0
-      ),
-      background: ""
+      prices: []
     };
   },
   async mounted() {
     const client = Contentful.createClient();
-    const resHeroes = await client.getEntries({
-      content_type: process.env.CTF_INDEX_HERO_ID
+    const resPricing = await client.getEntries({
+      content_type: process.env.CTF_PRICING_ID
     });
-    this.heroes = resHeroes.items
+    this.prices = resPricing.items
       .map(e => e.fields)
       .sort((a, b) => (a.order > b.order ? 1 : -1));
-    this.heroes.forEach(e => {
-      document.addEventListener("scroll", () => this.inView(e.ancher));
-    });
-    if (this.heroes.find(e => e.hasPricing === true)) {
-      const resPricing = await client.getEntries({
-        content_type: process.env.CTF_PRICING_ID
-      });
-      this.prices = resPricing.items
-        .map(e => e.fields)
-        .sort((a, b) => (a.order > b.order ? 1 : -1));
-    }
-    const assets = await client.getAssets();
-    assets.items.map(asset => {
-      if (asset.fields.title === "Women 2")
-        this.background =
-          "https:" + asset.fields.file.url + "?h=" + window.innerHeight;
-    });
-  },
-  methods: {
-    inView(id) {
-      var windowHeight = window.innerHeight;
-      var scrollY = window.scrollY || window.pageYOffset;
-      var scrollPosition = scrollY + windowHeight;
-      const element = document.getElementById(id);
-      var elementHeight = element.clientHeight;
-      var elementPosition =
-        element.getBoundingClientRect().top + scrollY + elementHeight;
-      if (scrollPosition > elementPosition - 100) {
-        this.selected = this.heroes.find(e => e.ancher === id);
-        return true;
-      }
-
-      return false;
-    },
-    markdown(selected) {
-      return selected && selected.textExtended
-        ? md.render(selected.textExtended)
-        : "<span />";
-    }
   },
   components: {
-    PricingCard,
-    FooterComp
+    Dialog,
+    DialogName,
+    FooterComponent: FooterComponent,
+    PricingCard
   }
 };
 </script>
+<style lang="scss" scoped>
+@import "../scss/colors.scss";
 
-<style scoped>
-.hero.is-transparent.is-fullheight {
-  background-color: transparent;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+.hero {
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
-.is-fixed {
-  position: fixed;
-  top: 0px;
-  width: 100%;
+@media (min-width: 969px) {
+  .is-hero1 {
+    background-image: url("/images/hero1.png");
+  }
+  .is-hero2 {
+    background-image: url("/images/hero2.png");
+  }
+  .is-hero3 {
+    background-image: url("/images/hero3.png");
+  }
+  .is-hero-integrations {
+    background-image: url("/images/hero-integrations.png");
+  }
 }
-.is-fixed .box {
-  min-height: 70vh;
-  text-align: center;
+.content h1 {
+  font-size: 3rem;
 }
-.overlay {
-  background-color: black;
-  opacity: 0.6;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-}
-.has-margin-bottom {
-  margin-bottom: 24px;
-}
-.snap {
-  scroll-behavior: smooth;
-  background-color: transparent;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-image: url("/images/hero2-background.jpg");
-}
-a:hover {
-  transform: scale(1.04);
-  transition: 200ms transform ease-in-out;
-}
-.box {
-  opacity: 1;
-  padding: 24px;
-}
-.box.is-visible-box {
-  opacity: 1;
-  transition: opacity 300ms ease-out;
-}
-.box.is-invisible-box {
-  opacity: 0;
-  transition: opacity 300ms ease-in;
-}
-.has-text-white .title,
-.has-text-white .subtitle {
-  color: white;
+.content h3 {
+  font-size: 1.5rem;
 }
 </style>

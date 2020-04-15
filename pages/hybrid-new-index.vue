@@ -29,23 +29,22 @@
     </section>
     <section class="hero is-fullheight is-hero-integrations" id="solution">
       <div class="hero-body">
-        <div class="container">
+        <div class="container content">
           <div class="columns is-multiline">
-            <div class="column is-4">
-              <Dialog
-                h3="Set up"
-                p="Configure your document with instructions for Iva to execute."
-                :v2="true"
-              />
+            <div class="column is-4 box">
+              <h3>Set up</h3>
+              <p>
+                Configure your document with instructions for Iva to execute.
+              </p>
             </div>
-            <div class="column is-4">
+            <div class="column is-4 box">
               <Dialog
                 h3="Send data"
                 p="Connect Iva to your other tools. Import data from you CSV."
                 :v2="true"
               />
             </div>
-            <div class="column is-4">
+            <div class="column is-4 box">
               <Dialog
                 h3="Focus"
                 p="Let Iva do the repetitive work. Focus of what's important."

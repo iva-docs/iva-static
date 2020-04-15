@@ -17,8 +17,9 @@
         {{ p }}
       </p>
       <a
-        href="https://app.iva-docs.com/auth/register"
-        class="button is-primary is-large is-hidden-mobile"
+        :href="href"
+        class="button is-primary is-large"
+        target="_blank"
         v-if="button"
       >
         {{ button }}
@@ -34,7 +35,11 @@ export default {
     h3: String,
     v2: Boolean,
     v3: Boolean,
-    button: String
+    button: String,
+    href: {
+      type: String,
+      default: "https://app.iva-docs.com/auth/register"
+    }
   },
   computed: {
     innerWidth() {
@@ -48,12 +53,13 @@ export default {
         (innerWidth < 1408 &&
           innerWidth > 1024 &&
           (!this.p || this.p.length < 80)) ||
-        (innerWidth > 1408 && this.p && this.p.length >= 80)
+        (innerWidth > 1408 && this.p && this.p.length >= 80) ||
+        (innerWidth < 1024 && (!this.p || (this.p && this.p.length < 80)))
       );
     },
     isLarge() {
       return (
-        innerWidth < 1024 ||
+        (innerWidth < 1024 && this.p && this.p.length >= 80) ||
         (innerWidth > 1024 &&
           this.p &&
           this.p.length >= 80 &&
@@ -97,13 +103,18 @@ export default {
   padding-top: 2vh;
   margin-top: 0;
 }
+.box-content.is-medium > h3 {
+  padding-left: 5vh;
+  padding-right: 2vh;
+  padding-top: 2vh;
+}
 
 .box-content.is-medium > p {
   padding-left: 5vw;
 }
 .box-content.is-large > p {
-  padding-left: 5vw;
-  padding-right: 5vw;
+  padding-left: 4vw;
+  padding-right: 4vw;
 }
 
 .box-content > p {
@@ -118,6 +129,8 @@ export default {
 
 .box-content > a {
   position: relative;
+  margin-left: 5vw;
+  margin-right: 3vw;
 }
 
 h3 {

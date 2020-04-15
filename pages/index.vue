@@ -48,7 +48,7 @@
             <div class="column is-4">
               <Dialog
                 h3="Focus"
-                p="Let Iva do the repetitive work. Focus of what's important."
+                p="Let Iva do the repetitive work. Focus on what's important."
                 :v2="true"
               />
             </div>

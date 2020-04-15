@@ -31,25 +31,29 @@
       <div class="hero-body">
         <div class="container content">
           <div class="columns is-multiline">
-            <div class="column is-4 box">
-              <h3>Set up</h3>
-              <p>
-                Configure your document with instructions for Iva to execute.
-              </p>
+            <div class="column is-4">
+              <div class="box">
+                <h3>Set up</h3>
+                <p>
+                  Configure your document with instructions for Iva to execute.
+                </p>
+              </div>
             </div>
-            <div class="column is-4 box">
-              <Dialog
-                h3="Send data"
-                p="Connect Iva to your other tools. Import data from you CSV."
-                :v2="true"
-              />
+            <div class="column is-4">
+              <div class="box">
+                <h3>Set up</h3>
+                <p>
+                  Configure your document with instructions for Iva to execute.
+                </p>
+              </div>
             </div>
-            <div class="column is-4 box">
-              <Dialog
-                h3="Focus"
-                p="Let Iva do the repetitive work. Focus of what's important."
-                :v2="true"
-              />
+            <div class="column is-4">
+              <div class="box">
+                <h3>Set up</h3>
+                <p>
+                  Configure your document with instructions for Iva to execute.
+                </p>
+              </div>
             </div>
 
             <div class="column is-3 is-offset-1" style="padding-top:48px">

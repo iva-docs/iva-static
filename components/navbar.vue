@@ -40,12 +40,14 @@
             </a>
             <a
               class="navbar-item"
+              target="_blank"
               href="https://zapier.com/apps/iva-docs/integrations"
             >
               Zapier integration
             </a>
             <a
               class="navbar-item"
+              target="_blank"
               href="https://www.npmjs.com/package/iva-converter"
             >
               Npm package

@@ -34,11 +34,11 @@ export default {
       }
     };
   },
-  async mounted() {
+  async asyncData({ params }) {
     const client = Contentful.createClient();
-    const resBlog = await client.getEntry(this.$route.params.id);
+    const resBlog = await client.getEntry(params.id);
     document.title = "Iva - " + resBlog.fields.title;
-    this.content = resBlog.fields.content;
+    return { content: resBlog.fields.content };
   },
   methods: {
     renderContent(node) {

@@ -267,14 +267,16 @@ export default {
       prices: []
     };
   },
-  async mounted() {
+  async asyncData() {
     const client = Contentful.createClient();
     const resPricing = await client.getEntries({
       content_type: process.env.CTF_PRICING_ID
     });
-    this.prices = resPricing.items
-      .map(e => e.fields)
-      .sort((a, b) => (a.order > b.order ? 1 : -1));
+    return {
+      prices: resPricing.items
+        .map(e => e.fields)
+        .sort((a, b) => (a.order > b.order ? 1 : -1))
+    };
   },
   components: {
     Dialog,

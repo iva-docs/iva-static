@@ -24,10 +24,34 @@
         <a class="navbar-item" href="/#integrations">
           Integrations
         </a>
+        <a class="navbar-item" href="/#developers">
+          Developers
+        </a>
         <a class="navbar-item" href="/#pricing">
           Pricing
         </a>
-
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Resources
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="/blog">
+              Our blog
+            </a>
+            <a
+              class="navbar-item"
+              href="https://zapier.com/apps/iva-docs/integrations"
+            >
+              Zapier integration
+            </a>
+            <a
+              class="navbar-item"
+              href="https://www.npmjs.com/package/iva-converter"
+            >
+              Npm package
+            </a>
+          </div>
+        </div>
         <a
           class="navbar-item is-primary"
           href="https://app.iva-docs.com/auth/login"

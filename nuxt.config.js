@@ -6,7 +6,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: "Let Iva do it for you",
+    title: "Iva - Word document generator",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -14,8 +14,8 @@ module.exports = {
         hid: "description",
         name: "description",
         content:
-          "Let Iva do it - Iva is a document generator that integrates with all your work tools",
-      },
+          "Let Iva do it - Iva is a word document generator that integrates with all your work tools"
+      }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     script: [
@@ -24,10 +24,10 @@ module.exports = {
       {
         src: "https://cdn.iubenda.com/cs/iubenda_cs.js",
         mode: "client",
-        defer: true,
+        defer: true
       },
-      { src: "ibuenda.js", mode: "server", defer: true },
-    ],
+      { src: "ibuenda.js", mode: "server", defer: true }
+    ]
   },
   /*
    ** Customize the progress bar color
@@ -48,9 +48,9 @@ module.exports = {
           enforce: "pre",
           test: /\.(js|vue)$/,
           loader: "eslint-loader",
-          exclude: /(node_modules)/,
+          exclude: /(node_modules)/
         });
       }
-    },
-  },
+    }
+  }
 };

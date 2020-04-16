@@ -24,10 +24,10 @@
         <a class="navbar-item" href="/#integrations">
           Integrations
         </a>
-        <a class="navbar-item" href="/#developers">
+        <a class="navbar-item" href="/developers">
           Developers
         </a>
-        <a class="navbar-item" href="/#pricing">
+        <a class="navbar-item" href="/pricing">
           Pricing
         </a>
         <div class="navbar-item has-dropdown is-hoverable">

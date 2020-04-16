@@ -106,12 +106,12 @@
                 p=""
               />
             </div>
-            <div class="column is-4" style="max-height:40vh;margin-left:-10vw;">
+            <div class="column is-4" style="max-height:20vh;margin-left:-10vw;">
               <img src="/images/pauline.png" />
             </div>
             <div
               class="column is-offset-1 is-4"
-              style="max-height:40vh;margin-left:5vw;"
+              style="max-height:10vh;margin-left:5vw;"
             >
               <img src="/images/sharon.png" />
             </div>
@@ -156,101 +156,6 @@
         </div>
       </div>
     </section>
-    <section class="hero is-fullheight is-hero3" id="developers">
-      <div class="hero-body content">
-        <div class="container">
-          <div class="columns is-multiline is-hidden-mobile">
-            <div class="column is-4 has-text-centered" style="padding-top:10vh">
-              <img src="/images/npm-logo.png" />
-            </div>
-            <div class="column is-4 has-text-centered">
-              <img src="/images/zapier-logo.png" style="padding-top:10vh" />
-            </div>
-            <div class="column is-4 has-text-centered">
-              <img src="/images/postman-logo.png" style="padding-top:10vh" />
-            </div>
-            <div class="column is-4">
-              <Dialog
-                h3="Find us on NPM. "
-                p=""
-                href="https://www.npmjs.com/package/iva-converter"
-                button="Iva-converter"
-              />
-            </div>
-            <div class="column is-4">
-              <Dialog
-                h3="Find us on Zapier. "
-                p=""
-                href="https://zapier.com/apps/iva-docs/integrations"
-                button="Iva integration"
-              />
-            </div>
-            <div class="column is-4">
-              <Dialog
-                h3="Read our dev docs. "
-                p=""
-                href="https://documenter.getpostman.com/view/11039305/SzYgRvVW?version=latest"
-                button="Documentation"
-              />
-            </div>
-          </div>
-          <div class="columns is-multiline is-hidden-tablet">
-            <div class="column is-12 has-text-centered">
-              <img src="/images/npm-logo.png" />
-            </div>
-            <div class="column is-12" style="margin-bottom:40vh;">
-              <Dialog
-                h3="Find us on NPM. "
-                p=""
-                href="https://www.npmjs.com/package/iva-converter"
-                button="Iva-converter"
-              />
-            </div>
-            <div class="column is-12 has-text-centered">
-              <img src="/images/zapier-logo.png" />
-            </div>
-            <div class="column is-12" style="margin-bottom:40vh;">
-              <Dialog
-                h3="Find us on Zapier. "
-                p=""
-                href="https://zapier.com/apps/iva-docs/integrations"
-                button="Iva integration"
-              />
-            </div>
-            <div class="column is-12 has-text-centered">
-              <img src="/images/postman-logo.png" />
-            </div>
-            <div class="column is-12" style="margin-bottom:40vh;">
-              <Dialog
-                h3="Read our dev docs. "
-                p=""
-                href="https://documenter.getpostman.com/view/11039305/SzYgRvVW?version=latest"
-                button="Documentation"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="hero is-fullheight is-hero2" id="pricing">
-      <div class="hero-body content">
-        <div class="container">
-          <div class="columns is-multiline">
-            <div class="column is-4" v-for="p in prices" :key="p.name">
-              <pricing-card
-                :name="p.name"
-                :price="p.price"
-                :isFeatured="p.isFeatured"
-                :featuredText="p.featuredText"
-                :features="p.features"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer-component />
   </div>
 </template>
 

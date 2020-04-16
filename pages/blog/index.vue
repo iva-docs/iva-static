@@ -1,5 +1,8 @@
 <template>
   <div class="container content" style="margin-top:100px">
+    <h1 class="has-text-centered has-text-white">Iva blog</h1>
+    <br />
+    <br />
     <div v-for="b in blogs" :key="b.id">
       <blog-card :blogPost="b" />
     </div>

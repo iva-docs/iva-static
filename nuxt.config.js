@@ -20,6 +20,7 @@ module.exports = {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     script: [
       { src: "/drift.js", mode: "client", defer: true },
+      { src: "/segment.js", mode: "client", defer: true },
       { src: "/optimize-img.js", mode: "server", defer: true },
       {
         src: "https://cdn.iubenda.com/cs/iubenda_cs.js",

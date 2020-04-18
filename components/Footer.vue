@@ -14,6 +14,9 @@
       <a href="https://www.facebook.com/Iva-docs-112318873777676"
         ><i class="fab fa-facebook-square"
       /></a>
+      <a href="https://www.youtube.com/channel/UCuP3lI0LHQEV9d3yHCKePIA"
+        ><i class="fab fa-youtube-square"
+      /></a>
     </div>
     <div
       class="column is-12 has-text-centered has-background-white"

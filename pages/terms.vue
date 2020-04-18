@@ -29,9 +29,10 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .iubenda-white,
 #iubenda_policy.iubenda_fluid_policy .iub_container.iub_base_container {
   margin-top: 48px;
+  background-color: white;
 }
 </style>

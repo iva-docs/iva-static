@@ -3,7 +3,7 @@
     <h1 class="has-text-centered has-text-white">Iva blog</h1>
     <br />
     <br />
-    <div v-for="b in blogs" :key="b.id">
+    <div v-for="b in blogs" :key="b.id" style="margin-bottom:24px;">
       <blog-card :blogPost="b" />
     </div>
   </div>

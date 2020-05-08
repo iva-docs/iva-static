@@ -1,31 +1,46 @@
 <template>
-  <div class="card is-primary">
-    <header
-      :class="'card-header ' + (isFeatured === true ? 'is-featured' : '')"
-    >
-      <p class="card-header-title">
-        {{ name }} {{ isFeatured === true ? `(${featuredText})` : "" }}
-      </p>
-    </header>
-    <div class="card-content">
-      <div class="content">
-        <ul>
-          <li v-for="f in features" :key="name + f">{{ f }}</li>
-        </ul>
-      </div>
+  <div
+    :class="
+      'pricing-plan ' +
+        (price === -1
+          ? 'is-warning'
+          : price === 0
+          ? 'is-success'
+          : 'is-primary')
+    "
+  >
+    <div class="plan-header">{{ name }}</div>
+    <div class="plan-price" v-if="price !== -1">
+      <span class="plan-price-amount">
+        <span class="plan-price-currency">€</span>{{ price }}
+      </span>
+      /month
     </div>
-    <footer
-      :class="
-        'card-footer ' + (isFeatured === true ? 'is-featured-footer' : '')
-      "
-    >
-      <div class="card-footer-item">
-        <a href="https://app.iva-docs.com/auth/register" v-if="price !== -1">
-          {{ price === 0 ? "Free" : price + "€ per month" }}
-        </a>
-        <a href="mailto:khaled@iva-docs.com" v-if="price === -1">Talk to us</a>
-      </div>
-    </footer>
+    <div class="plan-price" v-if="price === -1">
+      <span class="plan-price-amount">
+        <span class="plan-price-currency">
+          Contact us
+        </span>
+      </span>
+    </div>
+    <div class="plan-items">
+      <div class="plan-item" v-for="f in features" :key="f">{{ f }}</div>
+    </div>
+    <div class="plan-footer">
+      <a
+        href="https://app.iva-docs.com/auth/register"
+        class="button is-fullwidth"
+        v-if="price !== -1"
+      >
+        Choose plan
+      </a>
+      <a
+        href="mailto:khaled@iva-docs.com"
+        class="button is-fullwidth"
+        v-if="price === -1"
+        >Talk to us</a
+      >
+    </div>
   </div>
 </template>
 

@@ -2,18 +2,16 @@
   <div>
     <section class="hero is-fullheight is-hero1" id="pricing">
       <div class="hero-body content">
-        <div class="container">
-          <div class="columns is-multiline">
-            <div class="column is-4" v-for="p in prices" :key="p.name">
-              <pricing-card
-                :name="p.name"
-                :price="p.price"
-                :isFeatured="p.isFeatured"
-                :featuredText="p.featuredText"
-                :features="p.features"
-              />
-            </div>
-          </div>
+        <div class="pricing-table">
+          <pricing-card
+            v-for="p in prices"
+            :key="p.name"
+            :name="p.name"
+            :price="p.price"
+            :isFeatured="p.isFeatured"
+            :featuredText="p.featuredText"
+            :features="p.features"
+          />
         </div>
       </div>
     </section>

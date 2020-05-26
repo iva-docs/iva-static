@@ -35,6 +35,9 @@
             Resources
           </a>
           <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://help.iva-docs.com">
+              Our product documentation
+            </a>
             <a class="navbar-item" href="/blog">
               Our blog
             </a>

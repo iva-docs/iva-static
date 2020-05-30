@@ -9,9 +9,12 @@
           <h3 class="subtitle has-text-white">
             Let Iva automatically generate your documents for you.
           </h3>
-          <button class="button is-primary is-large has-margin-top">
+          <a
+            href="https://app.iva-docs.com/auth/register"
+            class="button is-primary is-large has-margin-top"
+          >
             Get set up in 5 minutes
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -43,6 +46,57 @@
               <p>
                 Let Iva do the repetitive work. Focus on what's important.
               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero is-fullheight" id="integrations">
+      <div class="hero-body">
+        <div class="columns is-multiline">
+          <div class="column is-12">
+            <h2 class="has-text-centered has-text-white">
+              Integrations
+            </h2>
+          </div>
+          <div class="column is-3">
+            <div class="box is-compact has-text-centered">
+              <h3>Email</h3>
+              <p>
+                Iva can send the generated document to any email address
+              </p>
+            </div>
+          </div>
+          <div class="column is-3">
+            <div class="box is-compact has-text-centered">
+              <h3>Google Drive</h3>
+              <p>Iva deposits the generated document on google drive</p>
+            </div>
+          </div>
+          <div class="column is-3">
+            <div class="box is-compact has-text-centered">
+              <h3>Zapier</h3>
+              <p>Integrate to 2000+ apps through Zapier</p>
+            </div>
+          </div>
+          <div class="column is-3">
+            <div class="box is-compact has-text-centered">
+              <h3>CSV</h3>
+              <p>
+                Deposit your CSV file to generate documents for each row
+              </p>
+            </div>
+          </div>
+          <div class="column is-3">
+            <div class="box is-compact is-paddingless has-text-centered">
+              <h3>Web hooks</h3>
+              <p>Iva Sends the generated documents to your web hook</p>
+            </div>
+          </div>
+          <div class="column is-3">
+            <div class="box is-compact has-text-centered">
+              <h3>Typeform</h3>
+              <p>You can generate a document for form responses</p>
             </div>
           </div>
         </div>
@@ -132,6 +186,24 @@
               </ul>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero is-fullheight" id="home">
+      <div class="hero-body has-text-centered">
+        <div class="container">
+          <h2 class="title has-text-white">
+            Did we convince you?
+          </h2>
+          <h3 class="subtitle has-text-white">
+            You can ask us questions in our chat right here in the corner!
+          </h3>
+          <a
+            href="https://app.iva-docs.com/auth/register"
+            class="button is-primary is-large has-margin-top"
+          >
+            Yes, let me try it!
+          </a>
         </div>
       </div>
     </div>

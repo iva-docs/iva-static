@@ -1,5 +1,5 @@
 <template>
-  <footer class="columns is-multiline">
+  <footer class="footer">
     <div
       class="column is-12 has-text-centered has-background-white"
       style="z-index: 10;"

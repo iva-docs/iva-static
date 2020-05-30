@@ -1,6 +1,18 @@
-$primary: #4e9fd7;
-$link: #28549c;
-$info: hsl(171, 100%, 41%);
-$success: #61d095;
-$warning: #ffee93;
-$danger: #db2b39;
+$blue: #2a559d;
+$turquoise: #04d1a2;
+$purple: #736eb5;
+$green: #65eb63;
+$yellow: #ebd328;
+$red: #db2b39;
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 4%);
+
+$primary: $turquoise;
+$link: $blue;
+$info: $purple;
+$success: $green;
+$warning: $yellow;
+$danger: $red;
+
+$background: $blue;
+$footer-background-color: $white;

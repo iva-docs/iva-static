@@ -1,171 +1,145 @@
 <template>
-  <div>
-    <section class="hero is-fullheight content" id="home">
-      <div class="hero-body">
+  <section>
+    <div class="hero is-fullheight" id="home">
+      <div class="hero-body has-text-centered">
         <div class="container">
-          <div class="columns is-multiline">
-            <div class="column is-6" style="padding-top:5vh;">
-              <h1 class="has-text-white">
-                Connect your data with your documents
-              </h1>
-              <h3 class="has-text-white">
-                Iva moves data from you day to day tools into your documents, so
-                you can focus on what's important.
-              </h3>
-              <a
-                href="https://app.iva-docs.com/auth/register"
-                class="button is-primary is-large is-fullwidth is-info"
-              >
-                Try now
-              </a>
-            </div>
-
-            <div class="column is-6">
-              <img src="/images/logo-border.png" />
-            </div>
-          </div>
+          <h2 class="title has-text-white">
+            You need to stop editing documents
+          </h2>
+          <h3 class="subtitle has-text-white">
+            Let Iva automatically generate your documents for you.
+          </h3>
+          <button class="button is-primary is-large has-margin-top">
+            Get set up in 5 minutes
+          </button>
         </div>
       </div>
-    </section>
-    <section class="hero is-fullheight is-hero-integrations" id="solution">
+    </div>
+    <div class="hero is-fullheight" id="solution">
       <div class="hero-body">
-        <div class="container">
-          <div class="columns is-multiline">
-            <div class="column is-4">
-              <Dialog
-                h3="Set up"
-                p="Configure your document with instructions for Iva to execute."
-                :v2="true"
-              />
-            </div>
-            <div class="column is-4">
-              <Dialog
-                h3="Send data"
-                p="Connect Iva to your other tools. Import data from you CSV."
-                :v2="true"
-              />
-            </div>
-            <div class="column is-4">
-              <Dialog
-                h3="Focus"
-                p="Let Iva do the repetitive work. Focus on what's important."
-                :v2="true"
-              />
-            </div>
-
-            <div class="column is-3 is-offset-1" style="padding-top:48px">
-              <img src="/images/logo-border.png" />
-            </div>
-            <div class="column  is-4" style="padding-top:24px">
-              <Dialog
-                h3="Software in itself doesn't save you time, adding it to your process does."
-                :v3="true"
-              />
-            </div>
-            <div class="column is-2" style="padding-top:24px;z-index:3;">
-              <img src="/images/Big-me.png" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="hero is-fullheight is-hero1" id="integrations">
-      <div class="hero-body content">
         <div class="columns is-multiline">
-          <div class="column is-offset-2 is-4">
-            <Dialog
-              h3="Iva at the center of your process. Repetitive work can be automated"
-              p=""
-            />
+          <div class="column is-12">
+            <h2 class="has-text-centered has-text-white">3 step process</h2>
           </div>
-          <div class="column is-3 is-hidden-mobile">
-            <img src="/images/logo-border.png" />
+          <div class="column is-4">
+            <div class="box has-text-centered">
+              <h3>Create</h3>
+              <p>
+                Build your template on Microsoft Word with instructions for Iva.
+              </p>
+            </div>
           </div>
-          <div class="column is-offset-1 is-4">
-            <Dialog
-              h3=""
-              p="Iva will handle all your documents and moves them into your day to day tools. Import data from Zapier, CSV files and more. Find your documents in your e-mail inbox, Cloud storage such as Google drive or connect it to zapier to more automation."
-            />
+          <div class="column is-4">
+            <div class="box has-text-centered">
+              <h3>Connect</h3>
+              <p>
+                Connect Iva to your other tools for automated generation.
+              </p>
+            </div>
           </div>
-          <div class="column is-3 is-hidden-mobile">
-            <img src="/images/integrations.png" />
+          <div class="column is-4">
+            <div class="box has-text-centered">
+              <h3>Focus</h3>
+              <p>
+                Let Iva do the repetitive work. Focus on what's important.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-    <section class="hero is-fullheight is-hero2" id="happy-customers">
-      <div class="hero-body content">
-        <div class="container">
-          <div class="columns is-multiline is-hidden-mobile">
-            <div class="column is-offset-1 is-2">
-              <img src="/images/zap-iva.png" />
-            </div>
-            <div class="column is-4" style="margin-left:10vw;">
-              <Dialog
-                h3="My team saves around an hour a day. Spent talking to client instead of writing documents."
-                p=""
-              />
-            </div>
-            <div class="column is-4" style="max-height:20vh;margin-left:-10vw;">
-              <img src="/images/pauline.png" />
-            </div>
-            <div
-              class="column is-offset-1 is-4"
-              style="max-height:10vh;margin-left:5vw;"
-            >
-              <img src="/images/sharon.png" />
-            </div>
-            <div class="column is-4" style="padding-top:20vh;margin-left:-5vw;">
-              <Dialog
-                h3="I can't see myselft editing documents anymore. Now they just popup in my inbox."
-                p=""
-              />
-            </div>
+    </div>
+    <div class="hero is-fullheight">
+      <div class="hero-body">
+        <div class="columns is-multiline">
+          <div class="column is-12">
+            <h2 class="has-text-centered has-text-white">
+              Hear it from our customers
+            </h2>
           </div>
-          <!-- Mobile -->
-          <div class="columns is-multiline is-hidden-tablet">
-            <div class="column is-12">
-              <img src="/images/pauline.png" />
-            </div>
-            <div
-              class="column is-12"
-              style="margin-top:-5vh;margin-bottom:20vh;"
-            >
-              <Dialog
-                h3="My team saves around an hour a day. Spent talking to client instead of writing documents."
-                p=""
-              />
-            </div>
-
-            <div class="column is-12">
-              <img src="/images/sharon.png" />
-            </div>
-            <div
-              class="column is-12"
-              style="margin-top:-20vh;margin-bottom:20vh;"
-            >
-              <Dialog
-                h3="I can't see myselft editing documents anymore. Now they just popup in my inbox."
-                p=""
-              />
-            </div>
+          <div class="column is-6">
+            <article class="media">
+              <figure class="media-left">
+                <span class="image is-128x128">
+                  <img src="/images/pauline.jpeg" />
+                </span>
+              </figure>
+              <div class="media-content">
+                <div class="content">
+                  <h5>
+                    Pauline Wuilleme
+                    <span class="is-pulled-right"
+                      >Head of customer success</span
+                    >
+                  </h5>
+                  <p>
+                    My team saves around an hour a day. Spent talking to client
+                    instead of writing documents.
+                  </p>
+                </div>
+              </div>
+            </article>
           </div>
-          <!-- <div class="column is-2" style="padding-top:20vh">
-            <img src="/images/gmail-iva.png" />
-          </div> -->
+          <div class="column is-6">
+            <article class="media">
+              <figure class="media-left">
+                <span class="image is-128x128">
+                  <img src="/images/sharon.jpeg" />
+                </span>
+              </figure>
+              <div class="media-content">
+                <div class="content">
+                  <h5>
+                    Sharon Journo
+                    <span class="is-pulled-right"
+                      >Customer success manager</span
+                    >
+                  </h5>
+                  <p>
+                    I can't see myselft editing documents anymore. Now they just
+                    pop up in my inbox.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+    <div class="hero is-fullheight" id="pricing">
+      <div class="hero-body">
+        <div class="columns is-multiline">
+          <div class="column is-12">
+            <h2 class="has-text-centered has-text-white">
+              Prices that fit your needs
+            </h2>
+          </div>
+          <div v-for="p in prices" :key="p.name" class="column is-4">
+            <div class="box content">
+              <h4>
+                {{ p.name }}
+                <span
+                  class="is-pulled-right"
+                  v-if="p.price !== 0 && p.price !== -1"
+                >
+                  {{ p.price }}€/Month</span
+                >
+                <span class="is-pulled-right" v-if="p.price === -1">
+                  Contact us</span
+                >
+              </h4>
+              <ul>
+                <li v-for="f in p.features" :key="f">{{ f }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
-import Dialog from "../components/Dialog.vue";
-import DialogName from "../components/DialogName.vue";
-import FooterComponent from "../components/Footer.vue";
 import Contentful from "../plugins/contentful.js";
-import PricingCard from "../components/Billing/PricingCard.vue";
-
 export default {
   data() {
     return {
@@ -182,41 +156,18 @@ export default {
         .map(e => e.fields)
         .sort((a, b) => (a.order > b.order ? 1 : -1))
     };
-  },
-  components: {
-    Dialog,
-    DialogName,
-    FooterComponent: FooterComponent,
-    PricingCard
   }
 };
 </script>
-<style lang="scss" scoped>
-@import "../scss/colors.scss";
 
-.hero {
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
+<style scoped>
+.card {
+  border-radius: 6px;
 }
-@media (min-width: 969px) {
-  .is-hero1 {
-    background-image: url("/images/hero1.png");
+.has-margin-top {
+  margin-top: 5rem;
+  @media screen and (max-width: $tablet - 1px) {
+    margin-top: 2rem;
   }
-  .is-hero2 {
-    background-image: url("/images/hero2.png");
-  }
-  .is-hero3 {
-    background-image: url("/images/hero3.png");
-  }
-  .is-hero-integrations {
-    background-image: url("/images/hero-integrations.png");
-  }
-}
-.content h1 {
-  font-size: 3rem;
-}
-.content h3 {
-  font-size: 1.5rem;
 }
 </style>

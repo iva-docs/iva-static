@@ -1,0 +1,48 @@
+@import "./colors.scss";
+@import "../node_modules/bulma/sass/utilities/initial-variables.sass";
+$box-color: $white;
+$box-background-color: transparent;
+$box-padding: 3rem;
+$box-shadow: 0;
+
+.box {
+  border: 1px solid $white;
+  margin: 3rem;
+  @media screen and (max-width: $tablet - 1px) {
+    margin: 1rem;
+    padding: 1.5rem !important;
+  }
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+    margin: 1rem;
+    padding: 2rem !important;
+  }
+
+  h3 {
+    font-size: 3rem !important;
+    color: $white !important;
+    margin-bottom: 5rem !important;
+    @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+      font-size: 2rem !important;
+      margin-bottom: 3rem !important;
+    }
+  }
+  h4 {
+    font-size: 1.5rem !important;
+    color: $white !important;
+    margin-bottom: 3rem !important;
+    @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+      font-size: 2rem !important;
+      margin-bottom: 3rem !important;
+    }
+    span {
+      font-size: 0.8rem !important;
+      line-height: 2rem !important;
+    }
+  }
+  p {
+    font-size: 1rem;
+  }
+  a {
+    margin-top: 5rem !important;
+  }
+}

@@ -4,11 +4,15 @@ $fa-font-path: "../node_modules/@fortawesome/fontawesome-free/webfonts";
 @import "../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
 @import "../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
 @import "./colors.scss";
+@import "./box.scss";
+@import "./hero.scss";
+@import "./button.scss";
+@import "./media.scss";
 @import "../node_modules/bulma/bulma.sass";
 @import "../node_modules/bulma-pricingtable";
 
 html,
 body {
-  background-color: $primary;
+  background-color: $background;
   font-size: 100%;
 }

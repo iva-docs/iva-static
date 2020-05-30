@@ -19,15 +19,12 @@
           Home
         </a>
         <a class="navbar-item" href="/#solution">
-          Solution
+          How
         </a>
         <a class="navbar-item" href="/#integrations">
           Integrations
         </a>
-        <a class="navbar-item" href="/developers">
-          Developers
-        </a>
-        <a class="navbar-item" href="/pricing">
+        <a class="navbar-item" href="/#pricing">
           Pricing
         </a>
         <div class="navbar-item has-dropdown is-hoverable">
@@ -46,17 +43,20 @@
               target="_blank"
               href="https://zapier.com/apps/iva-docs/integrations"
             >
-              Zapier integration
+              Our Zapier integration
             </a>
             <a
               class="navbar-item"
               target="_blank"
               href="https://www.npmjs.com/package/iva-converter"
             >
-              Npm package
+              Our Npm package
             </a>
           </div>
         </div>
+        <a class="navbar-item" href="/developers">
+          Developers
+        </a>
         <a
           class="navbar-item is-primary"
           href="https://app.iva-docs.com/auth/login"

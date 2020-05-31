@@ -1,5 +1,5 @@
 <template>
-  <div class="container content box" style="margin-top:100px">
+  <div class="container content box is-dark" style="margin-top:100px">
     <RichTextRenderer :document="content" />
   </div>
 </template>

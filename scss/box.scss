@@ -57,4 +57,34 @@ $box-shadow: 0;
       margin-bottom: 1rem !important;
     }
   }
+
+  .content h1,
+  &.content h1,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  span {
+    color: $white;
+  }
+
+  &.is-dark {
+    color: $light-blue;
+    .content h1,
+    &.content h1,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    span {
+      color: $light-blue;
+    }
+    background-color: $dark-blue;
+  }
 }

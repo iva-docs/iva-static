@@ -1,9 +1,9 @@
 <template>
   <div class="card">
     <div class="card-content">
-      <p class="title">
+      <h3>
         {{ blogPost.title }}
-      </p>
+      </h3>
       <div class="media">
         <div class="media-left">
           <figure class="image is-64x64">
@@ -11,8 +11,8 @@
           </figure>
         </div>
         <div class="media-content">
-          <p class="title is-5">{{ person.name }}</p>
-          <p class="subtitle is-6">{{ person.highlight }}</p>
+          <h5>{{ person.name }}</h5>
+          <h6>{{ person.highlight }}</h6>
         </div>
       </div>
       <RichTextRenderer :document="blogPost.shortDescription" />

@@ -15,29 +15,19 @@
       :class="'navbar-menu '.concat(hasOpenMenu === true ? 'is-active' : '')"
     >
       <div class="navbar-end" @click="toggleNavbar">
-        <a class="navbar-item" href="/#home">
-          Home
-        </a>
-        <a class="navbar-item" href="/#solution">
-          How
-        </a>
-        <a class="navbar-item" href="/#integrations">
-          Integrations
-        </a>
-        <a class="navbar-item" href="/#pricing">
-          Pricing
-        </a>
+        <a class="navbar-item" href="/#home"> Home </a>
+        <a class="navbar-item" href="/#solution"> How </a>
+        <a class="navbar-item" href="/#integrations"> Integrations </a>
+        <a class="navbar-item" href="/#pricing"> Pricing </a>
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            Resources
-          </a>
+          <a class="navbar-link"> Resources </a>
           <div class="navbar-dropdown">
             <a class="navbar-item" href="https://help.iva-docs.com">
               Our product documentation
             </a>
-            <a class="navbar-item" href="/blog">
+            <!-- <a class="navbar-item" href="/blog">
               Our blog
-            </a>
+            </a> -->
             <a
               class="navbar-item"
               target="_blank"
@@ -54,16 +44,12 @@
             </a>
           </div>
         </div>
-        <a class="navbar-item" href="/developers">
-          Developers
-        </a>
+        <a class="navbar-item" href="/developers"> Developers </a>
         <a
           class="navbar-item is-primary"
           href="https://app.iva-docs.com/auth/login"
         >
-          <button class="button is-primary">
-            Login
-          </button>
+          <button class="button is-primary">Login</button>
         </a>
       </div>
     </div>
@@ -74,14 +60,14 @@
 export default {
   data() {
     return {
-      hasOpenMenu: false
+      hasOpenMenu: false,
     };
   },
   methods: {
     toggleNavbar() {
       this.hasOpenMenu = !this.hasOpenMenu;
-    }
-  }
+    },
+  },
 };
 </script>
 

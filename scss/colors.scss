@@ -1,20 +1,21 @@
-$blue: #2a559d;
-$dark-blue: #1e3b6e;
-$light-blue: #d1e2ff;
-$turquoise: #04d1a2;
-$purple: #736eb5;
-$green: #65eb63;
-$yellow: #ebd328;
-$red: #db2b39;
-$white: hsl(0, 0%, 100%);
-$black: hsl(0, 0%, 4%);
+$primary: #0f1e42;
+$link: #2f195f;
+$success: #61d095;
+$warning: #ffee93;
+$danger: #db2b39;
+$gray: #1f1f23;
 
-$primary: $turquoise;
-$link: $blue;
-$info: $purple;
-$success: $green;
-$warning: $yellow;
-$danger: $red;
+$background-color: white;
 
-$background: $blue;
-$footer-background-color: $white;
+// Typo
+
+$text: #0f1e42;
+
+$content-heading-color: $text;
+
+$family-primary: "Comfortaa", cursive;
+
+$navbar-background-color: white;
+
+// image dimentions
+$dimensions: 16 24 32 48 64 96 128 256 320;

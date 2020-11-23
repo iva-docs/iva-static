@@ -1,19 +1,19 @@
 <template>
   <section>
     <div class="hero is-fullheight" id="home">
-      <div class="hero-body has-text-centered">
+      <div class="hero-body has-text-left">
         <div class="container">
-          <h2 class="title has-text-white">
-            You need to stop editing documents
+          <h2 class="title">
+            L'entrainement sportif le plus addictif ❤️
           </h2>
-          <h3 class="subtitle has-text-white">
-            Let Iva automatically generate your documents for you.
+          <h3 class="subtitle">
+            #live #home #workout
           </h3>
           <a
             href="https://app.iva-docs.com/auth/register"
             class="button is-primary is-large has-margin-top"
           >
-            Get set up in 5 minutes
+            Je m'inscris!
           </a>
         </div>
       </div>
@@ -21,31 +21,36 @@
     <div class="hero is-fullheight" id="solution">
       <div class="hero-body">
         <div class="columns is-multiline">
-          <div class="column is-12">
-            <h2 class="has-text-centered has-text-white">3 step process</h2>
+          <div class="column is-6">
+            <h2 class="has-text-centered">3 step process</h2>
           </div>
-          <div class="column is-4">
-            <div class="box has-text-centered">
-              <h3>Create</h3>
-              <p>
-                Build your template on Microsoft Word with instructions for Iva.
-              </p>
-            </div>
-          </div>
-          <div class="column is-4">
-            <div class="box has-text-centered">
-              <h3>Connect</h3>
-              <p>
-                Connect Iva to your other tools for automated generation.
-              </p>
-            </div>
-          </div>
-          <div class="column is-4">
-            <div class="box has-text-centered">
-              <h3>Focus</h3>
-              <p>
-                Let Iva do the repetitive work. Focus on what's important.
-              </p>
+          <div class="column is-6">
+            <div class="columns is-multiline">
+              <div class="column is-12">
+                <div class="box has-text-centered">
+                  <h3>Create</h3>
+                  <p>
+                    Build your template on Microsoft Word with instructions for
+                    Iva.
+                  </p>
+                </div>
+              </div>
+              <div class="column is-12">
+                <div class="box has-text-centered">
+                  <h3>Connect</h3>
+                  <p>
+                    Connect Iva to your other tools for automated generation.
+                  </p>
+                </div>
+              </div>
+              <div class="column is-12">
+                <div class="box has-text-centered">
+                  <h3>Focus</h3>
+                  <p>
+                    Let Iva do the repetitive work. Focus on what's important.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -55,7 +60,7 @@
       <div class="hero-body">
         <div class="columns is-multiline">
           <div class="column is-12">
-            <h2 class="has-text-centered has-text-white">
+            <h2 class="has-text-centered">
               Integrations
             </h2>
           </div>
@@ -106,7 +111,7 @@
       <div class="hero-body">
         <div class="columns is-multiline">
           <div class="column is-12">
-            <h2 class="has-text-centered has-text-white">
+            <h2 class="has-text-centered">
               Hear it from our customers
             </h2>
           </div>
@@ -163,7 +168,7 @@
       <div class="hero-body">
         <div class="columns is-multiline">
           <div class="column is-12">
-            <h2 class="has-text-centered has-text-white">
+            <h2 class="has-text-centered">
               Prices that fit your needs
             </h2>
           </div>
@@ -192,10 +197,10 @@
     <div class="hero is-fullheight" id="home">
       <div class="hero-body has-text-centered">
         <div class="container">
-          <h2 class="title has-text-white">
+          <h2 class="title">
             Did we convince you?
           </h2>
-          <h3 class="subtitle has-text-white">
+          <h3 class="subtitle">
             You can ask us questions in our chat right here in the corner!
           </h3>
           <a

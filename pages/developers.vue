@@ -3,10 +3,10 @@
     <div class="hero is-fullheight" id="home">
       <div class="hero-body has-text-centered">
         <div class="container">
-          <h2 class="title has-text-white">
+          <h2 class="title">
             Make Iva a part of your App
           </h2>
-          <h3 class="subtitle has-text-white">
+          <h3 class="subtitle">
             Focus on your UX. Let Iva handle your documents
           </h3>
           <button class="button is-primary is-large has-margin-top">
@@ -20,7 +20,7 @@
         <div class="container">
           <div class="columns is-multiline">
             <div class="column is-12">
-              <h2 class="has-text-centered has-text-white">Resources</h2>
+              <h2 class="has-text-centered">Resources</h2>
             </div>
             <div class="column is-4">
               <div class="box has-text-centered">

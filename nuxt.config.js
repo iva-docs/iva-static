@@ -17,7 +17,14 @@ module.exports = {
           "Let Iva do it - Iva is a word document generator that integrates with all your work tools"
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
+      }
+    ],
     script: [
       { src: "/drift.js", mode: "client", defer: true },
       { src: "/segment.js", mode: "server", defer: true },

@@ -1,5 +1,5 @@
 {
-  "name": "iva-static",
+  "name": "meoh-live-static",
   "version": "1.0.0",
   "description": "Nuxt.js project",
   "author": "khaled romdhane <khaled@iva-docs.com>",
@@ -13,7 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.0",
+    "@fortawesome/fontawesome-free": "^5.15.1",
     "bulma-pricingtable": "^0.2.0",
     "contentful": "^7.14.0",
     "contentful-rich-text-vue-renderer": "^1.1.5",
@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
-    "bulma": "^0.8.1",
+    "bulma": "^0.8.2",
     "eslint": "^4.19.1",
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-loader": "^2.1.1",

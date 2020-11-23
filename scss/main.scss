@@ -3,17 +3,21 @@ $fa-font-path: "../node_modules/@fortawesome/fontawesome-free/webfonts";
 @import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
 @import "../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
-@import "./colors.scss";
-@import "./box.scss";
-@import "./hero.scss";
-@import "./button.scss";
-@import "./media.scss";
-@import "./card.scss";
-@import "../node_modules/bulma/bulma.sass";
-@import "../node_modules/bulma-pricingtable";
+@import "colors.scss";
+@import "transition.scss";
 
-html,
-body {
-  background-color: $background;
-  font-size: 100%;
+@import "../node_modules/bulma/sass/utilities/functions.sass";
+@import "../node_modules/bulma/sass/utilities/initial-variables.sass";
+@import "../node_modules/bulma/sass/utilities/derived-variables.sass";
+$addColors: (
+  "gray": (
+    $gray,
+    white
+  )
+);
+$colors: map-merge($colors, $addColors);
+@import "../node_modules/bulma/bulma.sass";
+
+html {
+  background-color: $background-color;
 }

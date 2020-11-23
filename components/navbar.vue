@@ -2,7 +2,7 @@
   <nav class="navbar is-transparent is-fixed-top">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
-        <img src="/images/iva-logo.png" alt="Iva logo" />
+        <img src="/images/logo.png" alt="Iva logo" />
       </a>
       <div class="navbar-burger burger" @click="toggleNavbar">
         <span></span>
@@ -60,14 +60,14 @@
 export default {
   data() {
     return {
-      hasOpenMenu: false,
+      hasOpenMenu: false
     };
   },
   methods: {
     toggleNavbar() {
       this.hasOpenMenu = !this.hasOpenMenu;
-    },
-  },
+    }
+  }
 };
 </script>
 

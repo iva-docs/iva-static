@@ -6,15 +6,14 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: "Iva - Word document generator",
+    title: "Meoh Live - La salle de sport s'est chez vous",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content:
-          "Let Iva do it - Iva is a word document generator that integrates with all your work tools"
+        content: "Meoh live"
       }
     ],
     link: [

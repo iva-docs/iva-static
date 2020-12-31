@@ -15,14 +15,15 @@
       :class="'navbar-menu '.concat(hasOpenMenu === true ? 'is-active' : '')"
     >
       <div class="navbar-end" @click="toggleNavbar">
-        <a class="navbar-item" href="/#home"> Home </a>
-        <a class="navbar-item" href="/#solution"> How </a>
-        <a class="navbar-item" href="/#integrations"> Integrations </a>
+        <a class="navbar-item" href="/"> Home </a>
         <a class="navbar-item" href="/#pricing"> Pricing </a>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link"> Resources </a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://help.iva-docs.com">
+            <a
+              class="navbar-item"
+              href="https://iva-docs.slite.com/api/s/channel/EagUVY5a5ANgXzT4iRXUoL/Product%20Documentation"
+            >
               Our product documentation
             </a>
             <!-- <a class="navbar-item" href="/blog">
@@ -44,12 +45,12 @@
             </a>
           </div>
         </div>
-        <a class="navbar-item" href="/developers"> Developers </a>
-        <a
-          class="navbar-item is-primary"
-          href="https://app.iva-docs.com/auth/login"
-        >
-          <button class="button is-primary">Login</button>
+        <!-- <a class="navbar-item" href="/developers"> Developers </a> -->
+        <a class="navbar-item" href="https://app.iva-docs.com/auth/login">
+          <button class="button">Sign up for free</button>
+        </a>
+        <a class="navbar-item" href="https://app.iva-docs.com/auth/login">
+          <button class="button is-primary">Sign in</button>
         </a>
       </div>
     </div>

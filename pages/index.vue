@@ -286,6 +286,27 @@
         </div>
       </div>
     </div>
+    <div class="hero is-fullheight">
+      <div class="hero-body has-text-centered">
+        <div class="container">
+          <h2 class="title">
+            Try our free plan today!
+          </h2>
+          <p class="has-text-centered">
+            Start a free trial today, and generate up to 100 documents.
+          </p>
+          <a
+            href="https://app.iva-docs.com/auth/register"
+            class="button is-primary is-large has-margin-top"
+          >
+            Try Iva for free
+          </a>
+          <p class="has-text-centered">
+            <br />No credit card required - free forever plan - Cancel anytime
+          </p>
+        </div>
+      </div>
+    </div>
 
     <!-- <div class="hero is-fullheight">
       <div class="hero-body">
@@ -397,7 +418,7 @@ export default {
 }
 .has-background-2 {
   background-size: cover;
-  background-image: url("https://images.unsplash.com/photo-1516910817563-4df1c1b69058?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+  background-image: url("/images/background2.png");
 }
 h2,
 h3,

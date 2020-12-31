@@ -59,6 +59,7 @@
                 <h2>
                   Iva takes away repetitive work through automation
                 </h2>
+                <hr />
                 <p>
                   Through templates, Iva can generate documents with your data.
                   Instead of manually creating a new document and updating some
@@ -70,6 +71,7 @@
               </div>
               <div class="column is-4">
                 <h5>Your data</h5>
+                <hr />
                 <figure class="image">
                   <img src="images/data.png" alt="" />
                 </figure>
@@ -80,6 +82,7 @@
               </div>
               <div class="column is-4">
                 <h5>Your template</h5>
+                <hr />
                 <figure class="image">
                   <img src="images/word.jpg" alt="" />
                 </figure>
@@ -90,6 +93,7 @@
               </div>
               <div class="column is-4">
                 <h5>Your document</h5>
+                <hr />
                 <figure class="image">
                   <img src="images/logo.png" alt="" />
                 </figure>
@@ -109,6 +113,7 @@
                 <h2 class="title">
                   Use Iva with your daily tools !
                 </h2>
+                <hr />
                 <p class="has-text-centered">
                   Iva can connect to more than 2000 apps through Zapier and
                   more.
@@ -119,6 +124,7 @@
                 <figure class="image">
                   <img src="images/zapier.png" alt="" />
                 </figure>
+                <hr />
                 <p>
                   Easy automation for busy people. Zapier moves info between
                   your web apps automatically, so you can focus on your most
@@ -134,6 +140,7 @@
                 <figure class="image">
                   <img src="images/typeform.png" alt="" />
                 </figure>
+                <hr />
                 <p>
                   People-friendly forms and surveys Turn a list of questions
                   into a conversation.Typeform helps you get better data to fuel
@@ -150,6 +157,7 @@
                 <figure class="image">
                   <img src="images/drive.png" alt="" />
                 </figure>
+                <hr />
                 <p>
                   Easy and secure access to all of your content Store, share,
                   and collaborate on files and folders from any mobile device,
@@ -167,6 +175,7 @@
             <h2 class="title">
               Iva is a member of your team!
             </h2>
+            <hr />
             <p>
               Iva can send emails as a member of your team. Through domain name
               validation, Iva can send an email from your domain name. You can
@@ -186,6 +195,7 @@
         <h2>
           A personalized tools for who you are
         </h2>
+        <hr />
         <div class="columns is-multiline">
           <div class="column is-4">
             <div class="box">
@@ -193,6 +203,7 @@
               <div class="title is-1 has-text-centered">
                 <i class="fa fa-chalkboard-teacher fa-2x" />
               </div>
+              <hr />
               <p>
                 Generate Report cards, Certificates , etc., through integration
                 with your students' data. Iva will deliver them to you or to
@@ -206,6 +217,7 @@
               <div class="title is-1 has-text-centered">
                 <i class="fa fa-receipt fa-2x" />
               </div>
+              <hr />
               <p>
                 Generate Orders and Receipts through integrating with forms. Iva
                 will deliver the order to you and the receipt to your customers.
@@ -218,6 +230,7 @@
               <div class="title is-1 has-text-centered">
                 <i class="fa fa-laptop-house fa-2x" />
               </div>
+              <hr />
               <p>
                 Generate Dynamic invoices with styled items. Iva can deliver
                 them from your company's domain name.
@@ -230,6 +243,7 @@
               <div class="title is-1 has-text-centered">
                 <i class="fa fa-calendar-alt fa-2x" />
               </div>
+              <hr />
               <p>
                 Generate invitations and certificates from the list of people
                 who attend your events.
@@ -242,6 +256,7 @@
               <div class="title is-1 has-text-centered">
                 <i class="fa fa-comments-dollar fa-2x" />
               </div>
+              <hr />
               <p>
                 Generate contracts with the data relative to the clients and
                 deliver them to your clients automatically.
@@ -254,6 +269,7 @@
               <div class="title is-1 has-text-centered">
                 <i class="fa fa-user-shield fa-2x" />
               </div>
+              <hr />
               <p>
                 Generate contracts, onboarding documents , etc., by integrating
                 to your favorite HR tools.
@@ -292,6 +308,7 @@
           <h2 class="title">
             Try our free plan today!
           </h2>
+          <hr />
           <p class="has-text-centered">
             Start a free trial today, and generate up to 100 documents.
           </p>
@@ -299,7 +316,7 @@
             href="https://app.iva-docs.com/auth/register"
             class="button is-primary is-large has-margin-top"
           >
-            Try Iva for free
+            Get set up in less than 5 minutes
           </a>
           <p class="has-text-centered">
             <br />No credit card required - free forever plan - Cancel anytime

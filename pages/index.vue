@@ -69,33 +69,33 @@
               </div>
               <div class="column is-4">
                 <h5>Your data</h5>
+                <figure class="image">
+                  <img src="images/data.png" alt="" />
+                </figure>
                 <p>
                   Whether it is in an Excel sheet or another app, Iva can
                   connect to it.
                 </p>
-                <figure>
-                  <img src="images/data.png" alt="" />
-                </figure>
               </div>
               <div class="column is-4">
                 <h5>Your template</h5>
+                <figure class="image">
+                  <img src="images/word.jpg" alt="" />
+                </figure>
                 <p>
                   Prepare your document template for Iva so she can combine it
                   with your data.
                 </p>
-                <figure>
-                  <img src="images/word.jpg" alt="" />
-                </figure>
               </div>
               <div class="column is-4">
                 <h5>Your document</h5>
+                <figure class="image">
+                  <img src="images/logo.png" alt="" />
+                </figure>
                 <p>
                   Get your document delivered on your cloud storage of choice,
                   via email, or directly to your customers.
                 </p>
-                <figure>
-                  <img src="images/logo.png" alt="" />
-                </figure>
               </div>
             </div>
           </div>
@@ -115,6 +115,9 @@
               </div>
               <div class="column is-4">
                 <h5>Zapier</h5>
+                <figure class="image">
+                  <img src="images/zapier.png" alt="" />
+                </figure>
                 <p>
                   Easy automation for busy people. Zapier moves info between
                   your web apps automatically, so you can focus on your most
@@ -127,6 +130,9 @@
               </div>
               <div class="column is-4">
                 <h5>Typeform</h5>
+                <figure class="image">
+                  <img src="images/typeform.png" alt="" />
+                </figure>
                 <p>
                   People-friendly forms and surveys Turn a list of questions
                   into a conversation.Typeform helps you get better data to fuel
@@ -140,6 +146,9 @@
               </div>
               <div class="column is-4">
                 <h5>Google Drive</h5>
+                <figure class="image">
+                  <img src="images/drive.png" alt="" />
+                </figure>
                 <p>
                   Easy and secure access to all of your content Store, share,
                   and collaborate on files and folders from any mobile device,
@@ -373,5 +382,8 @@ p {
 }
 .columns .column.is-4 {
   padding: 32px 64px;
+}
+figure.image img {
+  max-width: 196px;
 }
 </style>

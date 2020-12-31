@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar is-transparent is-fixed-top">
+  <nav class="navbar is-transparent">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
         <img src="/images/logo.png" alt="Iva logo" />

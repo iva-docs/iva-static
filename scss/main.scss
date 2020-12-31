@@ -9,13 +9,13 @@ $fa-font-path: "../node_modules/@fortawesome/fontawesome-free/webfonts";
 @import "../node_modules/bulma/sass/utilities/functions.sass";
 @import "../node_modules/bulma/sass/utilities/initial-variables.sass";
 @import "../node_modules/bulma/sass/utilities/derived-variables.sass";
-$addColors: (
-  "gray": (
-    $gray,
-    white
-  )
-);
-$colors: map-merge($colors, $addColors);
+// $addColors: (
+//   "gray": (
+//     $gray,
+//     white
+//   )
+// );
+// $colors: map-merge($colors, $addColors);
 @import "../node_modules/bulma/bulma.sass";
 
 html {

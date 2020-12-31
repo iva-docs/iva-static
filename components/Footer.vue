@@ -24,7 +24,8 @@
     >
       Iva-docs.com made by Khaled Romdhane |
       <a href="/privacy-policies">Privacy policies</a> |
-      <a href="/terms">Terms of service</a>
+      <a href="/terms">Terms of service</a> | <i class="fa fa-location" /> 3 Rue
+      jean monnet, Porte 100, 77600 Bussy-Saint-Georges, France
     </div>
   </footer>
 </template>

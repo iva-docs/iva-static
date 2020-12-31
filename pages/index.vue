@@ -302,7 +302,7 @@
         </div>
       </div>
     </div>
-    <div class="hero is-fullheight">
+    <div class="hero is-fullheight" id="pricing">
       <div class="hero-body has-text-centered">
         <div class="container">
           <h2 class="title">
@@ -321,6 +321,27 @@
           <p class="has-text-centered">
             <br />No credit card required - free forever plan - Cancel anytime
           </p>
+          <div class="columns is-multiline">
+            <div v-for="p in prices" :key="p.name" class="column is-4">
+              <div class="box content has-text-left">
+                <h4>
+                  {{ p.name }}
+                  <span
+                    class="is-pulled-right is-small"
+                    v-if="p.price !== 0 && p.price !== -1"
+                  >
+                    {{ p.price }}€/Month</span
+                  >
+                  <span class="is-pulled-right is-small" v-if="p.price === -1">
+                    Contact us</span
+                  >
+                </h4>
+                <ul>
+                  <li v-for="f in p.features" :key="f">{{ f }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -450,5 +471,9 @@ p {
 }
 figure.image img {
   max-width: 196px;
+}
+
+.is-pulled-right.is-small {
+  font-size: 0.8rem;
 }
 </style>

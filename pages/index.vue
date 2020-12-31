@@ -322,7 +322,7 @@
             <br />No credit card required - free forever plan - Cancel anytime
           </p>
           <div class="columns is-multiline">
-            <div v-for="p in prices" :key="p.name" class="column is-4">
+            <div v-for="p in prices" :key="p.name" class="column is-3">
               <div class="box content has-text-left">
                 <h4>
                   {{ p.name }}

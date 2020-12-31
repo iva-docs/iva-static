@@ -10,7 +10,8 @@
             The only document automation software you need
           </h2>
           <h3 class="has-text-left">
-            Powerful, simplified tool to automate your workflow with documents.
+            A Powerful, simplified tool to automate your workflow with
+            documents.
           </h3>
           <a
             href="https://app.iva-docs.com/auth/register"
@@ -19,7 +20,7 @@
             Sign up for free
           </a>
           <p>
-            <br />No credit card required - free for ever plan - Cancel anytime
+            <br />No credit card required - free forever plan - Cancel anytime
           </p>
         </div>
       </div>
@@ -168,8 +169,13 @@
             </h2>
             <p>
               Iva can send emails as a member of your team. Through domain name
-              validation, Iva can send an email from your domain name
+              validation, Iva can send an email from your domain name. You can
+              also customize the content those emails.
             </p>
+
+            <figure>
+              <img src="images/email-custom.png" alt="" />
+            </figure>
           </div>
         </div>
       </div>
@@ -178,31 +184,40 @@
     <div class="hero is-fullheight">
       <div class="container content">
         <h2>
-          Personalized tools for who you are
+          A personalized tools for who you are
         </h2>
         <div class="columns is-multiline">
           <div class="column is-4">
             <div class="box">
               <h3>Teachers</h3>
+              <div class="title is-1 has-text-centered">
+                <i class="fa fa-chalkboard-teacher fa-2x" />
+              </div>
               <p>
-                Generate Report cards, Certificates etc., through integration
-                with your students data. Iva will deliver them for you.
+                Generate Report cards, Certificates , etc., through integration
+                with your students' data. Iva will deliver them to you or to
+                your students.
               </p>
             </div>
           </div>
           <div class="column is-4">
             <div class="box">
               <h3>Online Seller</h3>
+              <div class="title is-1 has-text-centered">
+                <i class="fa fa-receipt fa-2x" />
+              </div>
               <p>
-                Generate Orders and Receipts throught integrating with forms.
-                Iva will deliver the order to you and the receipt to your
-                customers.
+                Generate Orders and Receipts through integrating with forms. Iva
+                will deliver the order to you and the receipt to your customers.
               </p>
             </div>
           </div>
           <div class="column is-4">
             <div class="box">
               <h3>Freelancer</h3>
+              <div class="title is-1 has-text-centered">
+                <i class="fa fa-laptop-house fa-2x" />
+              </div>
               <p>
                 Generate Dynamic invoices with styled items. Iva can deliver
                 them from your company's domain name.
@@ -212,15 +227,21 @@
           <div class="column is-4">
             <div class="box">
               <h3>Event Organizer</h3>
+              <div class="title is-1 has-text-centered">
+                <i class="fa fa-calendar-alt fa-2x" />
+              </div>
               <p>
                 Generate invitations and certificates from the list of people
-                who attends your events.
+                who attend your events.
               </p>
             </div>
           </div>
           <div class="column is-4">
             <div class="box">
               <h3>Sales Person</h3>
+              <div class="title is-1 has-text-centered">
+                <i class="fa fa-comments-dollar fa-2x" />
+              </div>
               <p>
                 Generate contracts with the data relative to the clients and
                 deliver them to your clients automatically.
@@ -230,8 +251,11 @@
           <div class="column is-4">
             <div class="box">
               <h3>HR Manager</h3>
+              <div class="title is-1 has-text-centered">
+                <i class="fa fa-user-shield fa-2x" />
+              </div>
               <p>
-                Generate contracts, on boarding documents etc., by integrating
+                Generate contracts, onboarding documents , etc., by integrating
                 to your favorite HR tools.
               </p>
             </div>
@@ -239,7 +263,7 @@
         </div>
       </div>
     </div>
-    <div class="hero is-fullheight">
+    <div class="hero is-fullheight has-background-2">
       <div class="hero-body has-text-centered">
         <div class="container">
           <h2 class="title">
@@ -247,8 +271,8 @@
           </h2>
           <p class="has-text-centered">
             Our goal is empowering you to run your business with the software
-            tools that you need. Take the next step forward and join our growing
-            community by letting Iva do your work for you.
+            tools that you need.<br />Take the next step forward and join our
+            growing community by letting Iva do your work for you.
           </p>
           <a
             href="https://app.iva-docs.com/auth/register"
@@ -257,7 +281,7 @@
             Try Iva for free
           </a>
           <p class="has-text-centered">
-            <br />No credit card required - free for ever plan - Cancel anytime
+            <br />No credit card required - free forever plan - Cancel anytime
           </p>
         </div>
       </div>
@@ -360,17 +384,20 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .card {
   border-radius: 6px;
 }
 .has-margin-top {
   margin-top: 1rem;
 }
-
 .has-background-1 {
   background-size: cover;
   background-image: url("https://images.unsplash.com/photo-1468779036391-52341f60b55d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1521&q=80");
+}
+.has-background-2 {
+  background-size: cover;
+  background-image: url("https://images.unsplash.com/photo-1516910817563-4df1c1b69058?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
 }
 h2,
 h3,

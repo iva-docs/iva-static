@@ -6,14 +6,14 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: "Meoh Live - La salle de sport s'est chez vous",
+    title: "Iva - You document Generator",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content: "Meoh live"
+        content: "Iva - You document Generator"
       }
     ],
     link: [

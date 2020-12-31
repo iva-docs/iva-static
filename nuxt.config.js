@@ -6,14 +6,14 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: "Iva - You document Generator",
+    title: "Iva - Your document Generator",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content: "Iva - You document Generator"
+        content: "Iva - Your document Generator"
       }
     ],
     link: [

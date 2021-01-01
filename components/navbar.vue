@@ -22,7 +22,7 @@
           <div class="navbar-dropdown">
             <a
               class="navbar-item"
-              href="https://iva-docs.slite.com/api/s/channel/EagUVY5a5ANgXzT4iRXUoL/Product%20Documentation"
+              href="https://iva-docs.slite.com/p/channel/GEi1bpXDurJzK5GmC3nPcf"
             >
               Our product documentation
             </a>

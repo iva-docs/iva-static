@@ -18,7 +18,7 @@
     "contentful": "^7.14.0",
     "contentful-rich-text-vue-renderer": "^1.1.5",
     "dotenv": "^8.2.0",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.15.8",
     "vue": "^2.6.11",
     "vue-markdown": "^2.2.4",
     "vue-server-renderer": "^2.6.11"

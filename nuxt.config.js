@@ -13,27 +13,25 @@ module.exports = {
       {
         hid: "description",
         name: "description",
-        content: "Iva - Your document Generator"
-      }
+        content: "Iva - Your document Generator",
+      },
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
         rel: "stylesheet",
-        href:
-          "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
-      }
+        href: "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap",
+      },
     ],
     script: [
-      { src: "/drift.js", mode: "client", defer: true },
-      { src: "/segment.js", mode: "server", defer: true },
-      { src: "/ibuenda.js", mode: "server" },
+      { src: "/drift.js", defer: true },
+      { src: "/segment.js", defer: true },
+      { src: "/ga.js" },
       {
-        src: "https://cdn.iubenda.com/cs/iubenda_cs.js",
-        mode: "client",
-        defer: true
-      }
-    ]
+        src: "https://www.googletagmanager.com/gtag/js?id=G-115J9KGDC3",
+        defer: true,
+      },
+    ],
   },
   /*
    ** Customize the progress bar color
@@ -54,9 +52,9 @@ module.exports = {
           enforce: "pre",
           test: /\.(js|vue)$/,
           loader: "eslint-loader",
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
         });
       }
-    }
-  }
+    },
+  },
 };
